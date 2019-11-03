@@ -1,2 +1,1 @@
-# fordprog-egyben
-2019 | ősz | fordító programok
+# Fordító programok őszi félév
