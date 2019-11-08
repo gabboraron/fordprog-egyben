@@ -73,12 +73,12 @@ Minden változót a típusának és nevének megadásával kell deklarálni, tö
 - `EGESZ` típusú kifejezések: számkonstansok, `EGESZ` típusú változók és az ezekből a `+` (összedás), `-` (kivonás), `*` (szorzás), `/`  (egészosztás), `%` (maradékképzés) infix operátorokkal és zárójelekkel a szokásos módon felépített kifejezések.
 - `LOGIKAI` típusú kifejezések: az `IGAZ` és `HAMIS` literálok, `LOGIKAI` típusú változók, két `EGESZ` típusú kifejezésből az `=` (egyenlőség), `<` (kisebb), `>` (nagyobb), `<=` (kisebbegyenlő), `>=` (nagyobbegyenlő) infix operátorokkal előállított, valamint az ezekből `ES` (konjunkció), `VAGY` (diszjunkció), `=` (egyenlőség) infix és a `NEM` (negáció) **prefix** operátorral és zárójelekkel a szokásos módon felépített kifejezések.
 - Az infix operátorok mind balasszociatívak és a precedenciájuk növevő sorrendben a következő:
-  - VAGY
-  - ES
-  - =
-  - < > <= >=
-  - + -
-  - * / %
+  - `VAGY`
+  - `ES`
+  - `=`
+  - `< > <= >=`
+  - `+ -`
+  - `* / %`
 
 ### Utasítások
 
