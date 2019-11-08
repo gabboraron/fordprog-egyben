@@ -95,12 +95,33 @@ Minden változót a típusának és nevének megadásával kell deklarálni, tö
 > 
 > a megoldáshoz szükséges egy `flex` és egy `C++` fájl
 
-### megoldás
 **Fájlok:** [saját megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/elso_beadando) illetve [múlt félévből](https://github.com/gabboraron/fordprog-beadando1) valamint a [hivatalos példaprogram](https://github.com/gabboraron/fordprog-egyben/blob/master/lexikalis-pelda%20(2).zip)
 
 **Flex tutorial** [kifejtve futtatható példaprogramokkal itt](https://github.com/gabboraron/fordprog-1-flex)
 
 **Teszteléshez** a [hivatalos tesztfájlok](https://github.com/gabboraron/fordprog-egyben/blob/master/plang-2019-tesztfajlok.zip)at érdemes lehet [kiegészíteni még pár fájllal](https://github.com/gabboraron/fordprog-egyben/commit/70970ef1c854e79de35469b18a769154fcd1c870)
 
-**Érdekes részek:**
-
+### Megoldás érdekes részei:
+> A legegyszerűbb, legelemibb elemeket megadjuk [makrónak](https://github.com/gabboraron/fordprog-1-flex#flex)
+````
+DIGIT		    [0-9]
+WS  			  [ \t\n]
+CHAR  			[a-zA-Z]
+UNDERSCORE	"_"
+````
+> A [kulcsszavakat](https://github.com/gabboraron/fordprog-egyben#kulcsszavak), [kifejezéseket](https://github.com/gabboraron/fordprog-egyben#kifejezések), [típusokat](https://github.com/gabboraron/fordprog-egyben#típusok) stb, egyéb a nyelvben konkrétan szereplő szavakat lekezeljük az alábbi módon:
+````
+PROGRAM_VEGE      std::cout << "kulcsszo: PROGRAM_VEGE" << std::endl;
+VALTOZOK:         std::cout << "kulcsszo: VALTOZOK:"	<< std::endl;
+UTASITASOK:       std::cout << "kulcsszo: UTASITASOK:" 	<< std::endl;
+````
+> A makrók segítségével könnyen megadhatjuk a komplexebb konstrukciókat, pl: a [karakterek](https://github.com/gabboraron/fordprog-egyben#karakterek) formáit, vagy a whitespacek kezelését, illetve a [megjegyzéseket](https://github.com/gabboraron/fordprog-egyben#megjegyzések)
+````
+{DIGIT}+   		std::cout << "karakter(ek): " 		 << YYText()<< std::endl;
+{WS}+    		  std::cout << "ureskarakter(ek): "  << YYText()<< std::endl;
+"#"+.*+\n	 	  std::cout << "megjegyzes: "   	   << YYText()<< std::endl;
+````
+> ugyanígy megadhatjuk az [azonosítókat](https://github.com/gabboraron/fordprog-egyben#azonosítók) is
+```
+({CHAR}|{UNDERSCORE})+({CHAR}|{DIGIT}|{UNDERSCORE})*			std::cout << "azonosito: " << YYText() << std::endl;
+```
