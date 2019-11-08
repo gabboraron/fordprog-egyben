@@ -1,0 +1,9 @@
+PROGRAM masodik
+VALTOZOK:
+	EGESZ x
+UTASITASOK:
+	KI: (2 + x) * 5
+	#megjegyzes sor elejetol
+	KI: (2 + x) * 6 # megjegyzes nem sor elejetol
+	KI: (2 + x) * 6 # megjegyzes nem sor elejetol specialis # karakterekkel = > < is
+PROGRAM_VEGE
