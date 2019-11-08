@@ -1,6 +1,6 @@
 # Fordító programok őszi félév
 
-## A nyelv leírása:
+## Példakód:
 eredeti és bővebben: https://deva.web.elte.hu/pubwiki/doku.php?id=fordprog:plang2019
 példaprogram: 
 ````
@@ -88,3 +88,9 @@ Minden változót a típusának és nevének megadásával kell deklarálni, tö
 - Írás: A `KI:` utasítás a megadott kifejezés értékét a standard kimenetre írja (és egy sortöréssel fejezi be). (Megvalósítása: meg kell hívni a `ki_egesz` (vagy a `ki_logikai`) eljárást, amit a 4. beadandó leírásához mellékelt C fájl tartalmaz. Paraméterként a kiírandó értéket (mindkét esetben 4 bájtot) kell a verembe tenni.)
 - Ciklus: `CIKLUS AMIG feltétel utasítások CIKLUS_VEGE` alakú. A feltétel logikai kifejezés. A ciklus utasításlistája nem lehet üres. A megszokott módon, elöltesztelős ciklusként működik.
 - Elágazás: `HA feltétel AKKOR utasítások HA_VEGE` vagy `HA feltétel AKKOR utasítások` `KULONBEN utasitasok HA_VEGE` alakú. A feltétel logikai kifejezés. Az egyes ágak utasításlistái nem lehetnek üresek. A megszokott módon működik.
+
+## Lexikális elemző (1. beadandó)
+**Feladat:**
+> Lexikális hiba észlelése esetén hibajelzést kell adni, ami tartalmazza a hiba sorának számát; ezután a program befejeződhet, nem kell folytatni az elemzést.
+> 
+> a megoldáshoz szükséges egy `flex` és egy `C++` fájl
