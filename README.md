@@ -97,7 +97,9 @@ Minden változót a típusának és nevének megadásával kell deklarálni, tö
 
 ### megoldás
 **Fájlok:** [saját megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/elso_beadando) illetve [múlt félévből](https://github.com/gabboraron/fordprog-beadando1) valamint a [hivatalos példaprogram](https://github.com/gabboraron/fordprog-egyben/blob/master/lexikalis-pelda%20(2).zip)
+
 **Flex tutorial** [kifejtve futtatható példaprogramokkal itt](https://github.com/gabboraron/fordprog-1-flex)
+
 **Teszteléshez** a [hivatalos tesztfájlok](https://github.com/gabboraron/fordprog-egyben/blob/master/plang-2019-tesztfajlok.zip)at érdemes lehet [kiegészíteni még pár fájllal](https://github.com/gabboraron/fordprog-egyben/commit/70970ef1c854e79de35469b18a769154fcd1c870)
 
 **Érdekes részek:**
