@@ -9,8 +9,7 @@
 ---
 
 ## Példakód:
-eredeti és bővebben: https://deva.web.elte.hu/pubwiki/doku.php?id=fordprog:plang2019
-példaprogram: 
+**Példaprogram:** 
 ````
 # A legkisebb valodi oszto meghatarozasa.
 PROGRAM oszto
@@ -38,7 +37,10 @@ UTASITASOK:
   HA_VEGE
 PROGRAM_VEGE
 ````
+Még több példa a [tesztfájlokban](https://github.com/gabboraron/fordprog-egyben/blob/master/plang-2019-tesztfajlok.zip)
+
 ## A nyelv definíciója
+eredeti leírás és bővebben: https://deva.web.elte.hu/pubwiki/doku.php?id=fordprog:plang2019
 
 ### Karakterek
 
