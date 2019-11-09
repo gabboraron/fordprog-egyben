@@ -4,7 +4,9 @@
 - [A nyelv definíciója](https://github.com/gabboraron/fordprog-egyben#a-nyelv-definíciója)
 - [Lexikális elemző ~ 1. beadandó](https://github.com/gabboraron/fordprog-egyben#lexikális-elemző-1-beadandó)
   - [A lexikális elemző érdekesebb részei](https://github.com/gabboraron/fordprog-egyben#megoldás-érdekes-részei)
-- [Szintaktikus elemző]()
+- [Szintaktikus elemző ~ 2. beadandó](https://github.com/gabboraron/fordprog-egyben#szintaktikus-elemző-2-beadandó)
+
+---
 
 ## Példakód:
 eredeti és bővebben: https://deva.web.elte.hu/pubwiki/doku.php?id=fordprog:plang2019
