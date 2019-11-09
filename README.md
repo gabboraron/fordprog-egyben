@@ -110,6 +110,12 @@ Minden változót a típusának és nevének megadásával kell deklarálni, tö
 **Flex tutorial** [kifejtve futtatható példaprogramokkal itt](https://github.com/gabboraron/fordprog-1-flex)
 
 **Teszteléshez** a [hivatalos tesztfájlok](https://github.com/gabboraron/fordprog-egyben/blob/master/plang-2019-tesztfajlok.zip)at érdemes lehet [kiegészíteni még pár fájllal](https://github.com/gabboraron/fordprog-egyben/commit/70970ef1c854e79de35469b18a769154fcd1c870)
+### Fordítás és futtatás
+- futtassuk: `flex flex1.l`
+- keletkezik egy `lex.yy.cc` fájl benne `C++` kóddal
+- fordítsuk: `g++ -o flex1 lex.yy.cc`
+- a fordítás eredménye `flex1` futtatható állomány
+- futtassuk paraméterezve `input.txt`:ekkor az `input.txt` tartalma jelenik meg standar kimeneten
 
 ### Megoldás érdekes részei:
 Ezekhez a formákhoz igen hasznosak a [Flex regexei](https://github.com/gabboraron/fordprog-1-flex#flex-regex). 
