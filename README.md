@@ -146,3 +146,12 @@ UTASITASOK:       std::cout << "kulcsszo: UTASITASOK:" 	<< std::endl;
 > a tesztfájlok közül a `lexikalis_hibas` és `szintaktikus_hibas` kiterjesztésű fájlokra kell hibát jelezni, a többit el kell fogadni.
 
 **Fájlok:** [mintaprogram, amiből érdemes kiindulni](https://github.com/gabboraron/fordprog-egyben/blob/master/szintaktikus-pelda%20(1).zip), illetve [korábbi félév anyagai](https://github.com/gabboraron/fordprog-2-bisoncpp)
+### Fordítás és futtatás
+**Fordítás:** 
+```
+flex calculate.l
+bisonc++ calculate.y
+g++ -ocalculate calculate.cc parse.cc lex.yy.cc
+```
+**Futtatás:**
+`./calculate example.calculate`
