@@ -1,4 +1,10 @@
 # Fordító programok őszi félév
+**Tartalom:**
+- [Példakód](https://github.com/gabboraron/fordprog-egyben#példakód)
+- [A nyelv definíciója](https://github.com/gabboraron/fordprog-egyben#a-nyelv-definíciója)
+- [Lexikális elemző ~ 1. beadandó](https://github.com/gabboraron/fordprog-egyben#lexikális-elemző-1-beadandó)
+  - [A lexikális elemző érdekesebb részei](https://github.com/gabboraron/fordprog-egyben#megoldás-érdekes-részei)
+- [Szintaktikus elemző]()
 
 ## Példakód:
 eredeti és bővebben: https://deva.web.elte.hu/pubwiki/doku.php?id=fordprog:plang2019
@@ -102,6 +108,7 @@ Minden változót a típusának és nevének megadásával kell deklarálni, tö
 **Teszteléshez** a [hivatalos tesztfájlok](https://github.com/gabboraron/fordprog-egyben/blob/master/plang-2019-tesztfajlok.zip)at érdemes lehet [kiegészíteni még pár fájllal](https://github.com/gabboraron/fordprog-egyben/commit/70970ef1c854e79de35469b18a769154fcd1c870)
 
 ### Megoldás érdekes részei:
+Ezekhez a formákhoz igen hasznosak a [Flex regexei](https://github.com/gabboraron/fordprog-1-flex#flex-regex). 
 > A legegyszerűbb, legelemibb elemeket megadjuk [makrónak](https://github.com/gabboraron/fordprog-1-flex#flex)
 ````
 DIGIT		    [0-9]
@@ -125,3 +132,13 @@ UTASITASOK:       std::cout << "kulcsszo: UTASITASOK:" 	<< std::endl;
 ```
 ({CHAR}|{UNDERSCORE})+({CHAR}|{DIGIT}|{UNDERSCORE})*			std::cout << "azonosito: " << YYText() << std::endl;
 ```
+
+## Szintaktikus elemző (2. beadandó)
+**Feladat:**
+> a programnak parancssori paraméterben lehessen megadni az elemzendő fájl nevét
+>
+> a program minden alkalmazott szabályhoz egy sort írjon a képernyőre, például
+>
+> a tesztfájlok közül a `lexikalis_hibas` és `szintaktikus_hibas` kiterjesztésű fájlokra kell hibát jelezni, a többit el kell fogadni.
+
+**Fájlok:** [mintaprogram, amiből érdemes kiindulni](https://github.com/gabboraron/fordprog-egyben/blob/master/szintaktikus-pelda%20(1).zip), illetve [korábbi félév anyagai](https://github.com/gabboraron/fordprog-2-bisoncpp)
