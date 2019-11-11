@@ -41,6 +41,7 @@ Még több példa a [tesztfájlokban](https://github.com/gabboraron/fordprog-egy
 
 ## A nyelv definíciója
 eredeti leírás és bővebben: https://deva.web.elte.hu/pubwiki/doku.php?id=fordprog:plang2019
+
 a PLanG nyelvről bővebben: http://digitus.itk.ppke.hu/~flugi/bevprog_1415/plang.html
 
 ### Karakterek
@@ -151,6 +152,7 @@ UTASITASOK:       std::cout << "kulcsszo: UTASITASOK:" 	<< std::endl;
 > a program minden alkalmazott szabályhoz egy sort írjon a képernyőre, például
 >
 > a tesztfájlok közül a `lexikalis_hibas` és `szintaktikus_hibas` kiterjesztésű fájlokra kell hibát jelezni, a többit el kell fogadni.
+
 
 a PLanG nyelv összes szükséges szabályátirata: http://digitus.itk.ppke.hu/~flugi/bevprog_1415/atiras.html
 
