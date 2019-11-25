@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <map>
+#include <sstream>
 
 enum type {natural, boolean};
 
