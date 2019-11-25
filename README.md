@@ -172,11 +172,14 @@ g++ -ocalculate calculate.cc parse.cc lex.yy.cc
 **Futtatás:**
 `./calculate example.calculate`
 
-[Gyakori hibaüzenetek](https://github.com/gabboraron/fordprog-2-bisoncpp#hibaüzenetek-errorok): [warning, rule cannot be matched](https://github.com/gabboraron/fordprog-2-bisoncpp#warning-rule-cannot-be-matched), [Shift/Reduce Conflicts](https://github.com/gabboraron/fordprog-2-bisoncpp#shiftreduce-conflicts), [Reduce/Reduce Conflicts](https://github.com/gabboraron/fordprog-2-bisoncpp#reducereduce-conflicts). Továbbá érdemes odafigyelni, hogy a megfelelő [megfelelő header fájlokat használjuk](https://github.com/gabboraron/fordprog-egyben/blob/master/szintaktikus-pelda-ver2/Parser.h).
+**[Gyakori hibaüzenetek](https://github.com/gabboraron/fordprog-2-bisoncpp#hibaüzenetek-errorok):** [warning, rule cannot be matched](https://github.com/gabboraron/fordprog-2-bisoncpp#warning-rule-cannot-be-matched), [Shift/Reduce Conflicts](https://github.com/gabboraron/fordprog-2-bisoncpp#shiftreduce-conflicts), [Reduce/Reduce Conflicts](https://github.com/gabboraron/fordprog-2-bisoncpp#reducereduce-conflicts). Továbbá érdemes odafigyelni, hogy a megfelelő [megfelelő header fájlokat használjuk](https://github.com/gabboraron/fordprog-egyben/blob/master/szintaktikus-pelda-ver2/Parser.h).
 
+
+---
 
 ## Szemantikus elemző (3.beadandó)
 **Feladat:**
 > A kód szemantikai ellenőrzése
 
 **Fájlok:** [példakód](https://github.com/gabboraron/fordprog-egyben/blob/master/szemantikus-pelda.zip)
+**Tutorial:** [deva.web.elte.hu](http://deva.web.elte.hu/szemantikus.hu.html)
