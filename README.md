@@ -6,6 +6,7 @@
   - [A lexikális elemző érdekesebb részei](https://github.com/gabboraron/fordprog-egyben#megoldás-érdekes-részei)
 - [Szintaktikus elemző ~ 2. beadandó](https://github.com/gabboraron/fordprog-egyben#szintaktikus-elemző-2-beadandó)
 - [Szemantikus ellenörző ~ 3. beadandó](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#szemantikus-elemző-3beadandó)
+  - [Tutorial](https://github.com/gabboraron/fordprog-egyben#tutorial) 
 
 ---
 
@@ -262,7 +263,7 @@ NATURAL IDENT
 #### 4. lépés
 
 Ahelyett, hogy a standard kimenetre írnánk a deklarált változók nevét, most betesszük az adataikat a szimbólumtáblába. A `map` adattípusnak van `[]` operátora, ennek segítségével lehet beállítani és lekérdezni az adott kulcshoz tartozó értéket.
-- Írd át a deklarációkhoz tartozó szabályalternatívák programját úgy, hogy a változót és adatait szúrja be a szimbólumtáblába!
+- Írd át a [deklarációkhoz tartozó szabályalternatívák programját](https://github.com/gabboraron/fordprog-egyben/commit/3bae4cd96415afc6442f47598f50609e11c160bd#diff-8fc56131b7aa5e0826468f24b4798841) úgy, hogy a változót és adatait szúrja be a szimbólumtáblába!
 
 ```
 NATURAL IDENT
@@ -283,7 +284,30 @@ NATURAL IDENT
   }
   ```
 
-A hibaüzenet szövegének összegyűjtéséhez és a korábbi deklaráció sorának szöveggé konvertálásához a `stringstream` osztályt használtuk. Ehhez be kell `include`-olni a `semantics.h` fájlba a `sstream` standard fejállományt!
-A `stringstream` típusú `ss`-ből a `str()` tagfüggvénnyel lehet lekérni a benne összegyűlt `string`-et. Mivel az `error` függvény (lásd a Parser.ih-ban!) string helyett `C` stílusú karakterláncot vár paraméterként, ezért a `c_str()` függvény segítségével konvertálunk.
+A hibaüzenet szövegének összegyűjtéséhez és a korábbi deklaráció sorának szöveggé konvertálásához a `stringstream` osztályt használtuk. Ehhez be kell `include`-olni a [semantics.h](https://github.com/gabboraron/fordprog-egyben/commit/3bae4cd96415afc6442f47598f50609e11c160bd#diff-4372faf2015e5853c06e90c1b95d6c33) fájlba a `sstream` standard fejállományt!
+A `stringstream` típusú `ss`-ből a `str()` tagfüggvénnyel lehet lekérni a benne összegyűlt `string`-et. Mivel az `error` függvény (lásd a [Parser.ih](https://github.com/gabboraron/fordprog-egyben/blob/master/assign1/Parser.ih)-ban!) string helyett `C` stílusú karakterláncot vár paraméterként, ezért a `c_str()` függvény segítségével konvertálunk.
 - Töltsd ki hasonlóan a logikai változók deklarációjához tartozó szabályalternatívát is, de ott a szimbólumtáblába logikai változót szúrj be!
 - A programnak most már a 4.szemantikus-hibas fájlra hibát kell jeleznie.
+
+#### 5. lépés
+
+Azt is szeretnénk ellenőrizni, hogy az értékadásokban használt változók deklarálva vannak-e.
+- Egészítsd ki az értékadásokat és a kifejezéseket leíró szabályoknak az IDENT-et tartalmazó alternatíváit úgy, hogy hibaüzenetet kapjunk nem deklarált változók esetén!
+- Ellenőrizd, hogy az 5. és 6. szemantikus hibás tesztfájlra valóban hibaüzenetet ad-e a fordító!
+Az értékadások típushelyességének ellenőrzéséhez szükséges, hogy szemantikus értéket adjunk a kifejezésekhez. A konkrét esetben ez lehet a korábban definiált type felsorolási típusú érték. A kifejezéseket leíró szabályokban be fogjuk állítani a kifejezés szemantikus értékét (a kifejezés típusát) a szabály jobboldala alapján (lásd az előadás anyagában: szintetizált attribútum). A szabály baloldalának szemantikus értékére a `$$` jelöléssel hivatkozhatunk az akciókban. Ha nemterminálisokhoz szeretnénk szemantikus értéket hozzárendelni, akkor ezt is fel kell tüntetni a fájl elején. Mivel ez már nem token, ezért a `%type <unió_megfelelő_mezője> nemterminális_neve` szintaxist kell használni.
+- Egészítsd ki az assign.y fájlban korábban definiált uniót egy `type*` típusú mezővel, és tüntesd fel az `expr` nemterminálishoz rendelt szemantikus érték típusát az unióban létrehozott új mezőnév segítségével!
+- Egészítsd ki a kifejezéseket leíró négy szabályalternatíva akcióit olyan utasításokkal, amelyek beállítják a szabály baloldalának szemantikus értékét (a kifejezés típusát)!
+Például az `IDENT` alternatíva esetén a szimbólumtáblából kérhetjük le az azonosító típusát:
+
+`$$ = new type(szimbolumtabla[*$1].var_type);`
+A `TRUE` alternatíva még egyszerűbb:
+`$$ = new type(boolean);`
+Használd fel az `expr` nemterminálisokhoz most beállított szemantikus értékeket az értékadásra vonatkozó szabályban: ellenőrizd, hogy az értékadás két oldala azonos típusú-e!
+```
+if( szimbolumtabla[*$1].var_type != *$3 )
+{
+  error( "Tipushibas ertekadas.\n" );
+}
+```
+- Most már valamennyi szemantikus hibás példára hibát kell jeleznie a programnak.
+- Az `IDENT` és `expr` szimbólumok szemantikus értékeit minden esetben (a lex függvényben és a szabályokhoz csatolt akciókban is) a new kulcsszó segítségével, dinamikus memóriafoglalással hoztuk létre. Azokban az akciókban, ahol ezek a szimbólumok a szabály jobb oldalán állnak, felhasználtuk az értékeket. A program memóriahatékonyságának érdekében azonban a felhasználás után fel kell szabadítani a lefoglalt memóriát, hogy elkerüljük a memóriaszivárgást. Nézd végig az összes szabályt, és ahol a jobb oldalon IDENT vagy expr áll, ott az akció végére írd be a következő utasítást: delete $i (ahol i az `IDENT` vagy `expr` sorszáma).
