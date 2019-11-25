@@ -182,4 +182,29 @@ g++ -ocalculate calculate.cc parse.cc lex.yy.cc
 > A kód szemantikai ellenőrzése
 
 **Fájlok:** [példakód](https://github.com/gabboraron/fordprog-egyben/blob/master/szemantikus-pelda.zip)
-**Tutorial:** [deva.web.elte.hu](http://deva.web.elte.hu/szemantikus.hu.html)
+
+### Tutorial:
+forrás: [deva.web.elte.hu/szemantikus.hu.html](http://deva.web.elte.hu/szemantikus.hu.html)
+
+#### 1. lépés
+
+Ebben a tananyagban egy olyan nyelvet fogunk használni, amelynek alapelemei a nemnegatív egész számok, a logikai literálok és változók. A változókat a program elején kell deklarálni. A deklarációk után értékadások sorozata következik. Ezek bal oldalán egy változó, jobb oldalán egy változó vagy egy literál szerepel. Egy példaprogram:
+
+````
+natural n
+natural m
+boolean b
+n := 0
+b := true
+m := n
+````
+
+- Töltsd le a nyelv [lexikális és szintaktikus elemzőjét](https://github.com/gabboraron/fordprog-egyben/tree/master/assign1) valamint a [tesztfájlokat](https://github.com/gabboraron/fordprog-egyben/tree/master/assign1/peldak)!
+- Nézd át a flex forrást ([assign.l](https://github.com/gabboraron/fordprog-egyben/blob/master/assign1/assign.l)) és a bisonc++ forrást ([assign.y](https://github.com/gabboraron/fordprog-egyben/blob/master/assign1/assign.y))!
+- A [Parser.h](https://github.com/gabboraron/fordprog-egyben/blob/master/assign1/Parser.h) és [Parser.ih](https://github.com/gabboraron/fordprog-egyben/blob/master/assign1/Parser.ih) fejállományokat a bisonc++ generálta az első futtatásakor, de ezekbe beleírhatunk.
+- A [Parser.h](https://github.com/gabboraron/fordprog-egyben/blob/master/assign1/Parser.h) fejállományba felvettük a lexikális elemzőt adattagként, és hozzáadtunk egy konstruktort, ami inicializálja azt.
+- A [Parser.ih](https://github.com/gabboraron/fordprog-egyben/blob/master/assign1/Parser.ih) implementációs fejállományban implementáltuk a lex függvényt, ami továbbítja lexikális elemző által felismert tokeneket a szintaktikus elemzőnek, és beállítja a szintaktikus elemző `d_loc__` mezőjét arra pozícióra, ahol az elemzés éppen tart a forrásszövegben! Ugyanebben a forrásfájlban a hibakezelést végző `error` függvényt is módosítottuk.
+- Fordítsd le a projektet a `make` paranccsal (vagy "kézzel", a flex, bisonc++ és g++ segítségével)!
+- Futtasd a programot a helyes, a [lexikális hibás](https://github.com/gabboraron/fordprog-egyben/blob/master/assign1/peldak/2.lex-hibas) és a [szintaktikus hibás](https://github.com/gabboraron/fordprog-egyben/blob/master/assign1/peldak/3.szintaktikus-hibas) példákra!
+- Figyeld meg, hogy a program nem jelez hibát a [szemantikus hibás](https://github.com/gabboraron/fordprog-egyben/blob/master/assign1/peldak/4.szemantikus-hibas) példákra! Ennek a feladatsornak az a célja, hogy kiszűrjük ezeket a hibákat.
+
