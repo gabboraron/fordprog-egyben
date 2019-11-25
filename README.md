@@ -185,6 +185,7 @@ g++ -ocalculate calculate.cc parse.cc lex.yy.cc
 
 ### Tutorial:
 forrás: [deva.web.elte.hu/szemantikus.hu.html](http://deva.web.elte.hu/szemantikus.hu.html)
+eredeti tutorial fájlok és teszteseteik: [tutorial](https://github.com/gabboraron/fordprog-egyben/commit/c4015e3a14d0a38ff07b659307377892d982bb53) 
 
 #### 1. lépés
 
@@ -212,14 +213,47 @@ m := n
 
 Szimbólumtáblát szeretnénk létrehozni. Az egyszerűség kedvéért ezt a C++ standard könyvtárának `map` adattípusával fogjuk megvalósítani. A map kulcsa a változó neve (`string`) lesz, a hozzárendelt érték pedig tartalmazni fogja a változó típusát és a deklarációjának sorát. A szükséges C++ kódot egy új fejállományba, a [semantics.h]() fájlba írjuk.
 
-- A semantics.h fájlban include-old az `iostream`, `string` és `map` standard fejállományokat!
+- A [semantics.h](https://github.com/gabboraron/fordprog-egyben/commit/c5f8c306f3a443d8826dbf9505335e732c9ccfcf#diff-4372faf2015e5853c06e90c1b95d6c33) fájlban include-old az `iostream`, `string` és `map` standard fejállományokat!
 - Hozz létre ugyanitt egy felsorolási típust a programnyelvben előforduló két típus reprezentálásához!
   `enum type { natural, boolean };`
 - Készíts egy `var_data` nevű rekord típust, amit az egyes változókhoz hozzárendelt adatok tárolására fogunk használni. Két mezője legyen:
   - `decl_row` azt fogja tárolni, hogy az adott változó a program hányadik sorában volt deklarálva.
   - `var_type` a változó típusát tárolja. Ez a mező az imént definiált type típusú legyen!
 - Írj a `var_data` rekordhoz egy két paraméteres konstruktort is, hogy könnyen lehessen inicializálni az ilyen típusú objektumokat létrehozásukkor. Legyen továbbá egy nulla paraméteres (üres törzsű) konstruktor is, mert erre majd szükség lesz akkor, amikor ilyen típusú elemeket akarunk egy `map`-ben tárolni!
-- A *Parser.h* fejállományban add hozzá a Parser osztály privát adattagjai közé a szimbólumtáblát:
+- A *[Parser.h](https://github.com/gabboraron/fordprog-egyben/commit/c5f8c306f3a443d8826dbf9505335e732c9ccfcf#diff-225c1abddd1957a6be382bcc2a7df431)* fejállományban add hozzá a Parser osztály privát adattagjai közé a szimbólumtáblát:
   `std::map<std::string,var_data> szimbolumtabla;`
-- Az *assign.y* fájl elején cseréld le a `%baseclass-preinclude` direktívában az `<iostream>` fejállományt `"semantics.h"`-ra, hogy az imént készített fejállomány része legyen a projektnek!
+- Az *[assign.y](https://github.com/gabboraron/fordprog-egyben/commit/c5f8c306f3a443d8826dbf9505335e732c9ccfcf#diff-8fc56131b7aa5e0826468f24b4798841)* fájl elején cseréld le a `%baseclass-preinclude` direktívában az `<iostream>` fejállományt `"semantics.h"`-ra, hogy az imént készített fejállomány része legyen a projektnek!
 Próbáld lefordítani a projektet, és javítsd az esetleges hibákat!
+
+#### 3. lépés
+
+Az [assign.y](https://github.com/gabboraron/fordprog-egyben/blob/master/assign1/assign.y) fájlban a deklarációk szintaxisát leíró szabályhoz szeretnénk majd egy olyan akciót írni, ami az adott változót beszúrja az adataival együtt a szimbólumtáblába. Ehhez a következőkre van szükség:
+- A deklaráció sorának száma: ez a `d_loc__.first_line` érték lesz, amit a `lex` függvény állít be. ([Lásd az 1. lépést!](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#1-lépés))
+- A változó típusa: ez onnan derül ki, hogy éppen melyik szabály-alternatíva az aktív (`NATURAL IDENT` vagy `BOOLEAN IDENT`).
+- A változó neve: ezt csak a lexikális elemző tudja! El kell érnünk, hogy ez továbbításra kerüljön a szintaktikus elemzőhöz.
+A bisonc++ megengedi, hogy tetszőleges (terminális vagy nemterminális) szimbólum mellé egy ún. szemantikus értéket (lásd az előadás anyagában: attribútum) rendeljünk. Mivel különböző szimbólumokhoz különböző típusú szemantikus érték rendelhető, ezért létre kell hoznunk egy unió típust ezekhez. Erre a bisonc++ külön szintaxist biztosít, amiből majd egy valódi C++ unió típust fog generálni. Ennek most egyetlen sora lesz, hiszen kezdetben csak a változókhoz szeretnénk szemantikus információként hozzárendelni a nevüket.
+- Az assign.y fájlhoz az első `%token` deklaráció elé add hozzá a következőt:
+```
+%union
+{
+  std::string *szoveg;
+}
+```
+- Ennek az uniónak a mezőneveit használhatjuk arra, hogy meghatározzuk az egyes szimbólumokhoz rendelt szemantikus értékek típusát. Egészítsd ki az azonosító tokent így: `%token <szoveg> IDENT;`
+- Az azonosító tokeneknek most már lehet szemantikus értéke (string), de ezt be is kell állítanunk valahol. A terminálisok szemantikus értékét a lex függvény tudja beállítani. (Lásd az előadás anyagában: *kitüntetett szintetizált attribútum*.) Egészítsd ki a lex függvényt (még a return előtt) a következő sorokkal:
+```
+if( ret == IDENT )
+{
+  d_val__.szoveg = new std::string(lexer.YYText());
+}
+```
+  (Az YYText() függvénnyel lehet elkérni a flex-től a felismert token szövegét. Ebből létrehozunk egy string-et. A Parser osztály d_val__ adattagja olyan unió típusú, amit az imént az assign.y fájlba írtunk. Ennek a szoveg mezőjébe írhatjuk a szöveget.)
+Most már elérjük az assign.y fájlban a szabályok mögé írható akciók belsejében az azonosítókhoz tartozó szövegeket. Az a: A B C szabály esetén az A szimbólum szemantikus értékére $1, a B szimbóluméra $2, a C szimbóluméra $3 hivatkozik. Ezek típusának megállapításához meg kell néznünk, hogy az unió típusnak melyik mezőjét rendeltük hozzá az adott szimbólumhoz. Ennek a mezőnek a típusa lesz a szemantikus érték típusa. (Esetünkben string*.)
+- A deklarációkra vonatkozó szabályalternatívákat egészítsd ki úgy, hogy kiírják a standard kimenetre az éppen deklarált változó nevét!
+```
+NATURAL IDENT
+{
+  std::cout << *$2 << std::endl;
+}
+```
+- Futtasd a helyes példára a programot!
