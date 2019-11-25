@@ -247,8 +247,9 @@ if( ret == IDENT )
   d_val__.szoveg = new std::string(lexer.YYText());
 }
 ```
-  (Az YYText() függvénnyel lehet elkérni a flex-től a felismert token szövegét. Ebből létrehozunk egy string-et. A Parser osztály d_val__ adattagja olyan unió típusú, amit az imént az assign.y fájlba írtunk. Ennek a szoveg mezőjébe írhatjuk a szöveget.)
-Most már elérjük az assign.y fájlban a szabályok mögé írható akciók belsejében az azonosítókhoz tartozó szövegeket. Az a: A B C szabály esetén az A szimbólum szemantikus értékére $1, a B szimbóluméra $2, a C szimbóluméra $3 hivatkozik. Ezek típusának megállapításához meg kell néznünk, hogy az unió típusnak melyik mezőjét rendeltük hozzá az adott szimbólumhoz. Ennek a mezőnek a típusa lesz a szemantikus érték típusa. (Esetünkben string*.)
+*(Az `YYText()` függvénnyel lehet elkérni a flex-től a felismert token szövegét. Ebből létrehozunk egy `string`-et. A Parser osztály `d_val__` adattagja olyan unió típusú, amit az imént az assign.y fájlba írtunk. Ennek a szoveg mezőjébe írhatjuk a szöveget.)*
+
+Most már elérjük az [assign.y]() fájlban a szabályok mögé írható akciók belsejében az azonosítókhoz tartozó szövegeket. Az `a: A B C` szabály esetén az `A` szimbólum szemantikus értékére `$1`, a `B` szimbóluméra `$2`, a `C` szimbóluméra `$3` hivatkozik. Ezek típusának megállapításához meg kell néznünk, hogy az unió típusnak melyik mezőjét rendeltük hozzá az adott szimbólumhoz. Ennek a mezőnek a típusa lesz a szemantikus érték típusa. (Esetünkben `string*`.)
 - A deklarációkra vonatkozó szabályalternatívákat egészítsd ki úgy, hogy kiírják a standard kimenetre az éppen deklarált változó nevét!
 ```
 NATURAL IDENT
