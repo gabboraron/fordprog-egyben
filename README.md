@@ -107,7 +107,7 @@ Minden változót a típusának és nevének megadásával kell deklarálni, tö
 > 
 > a megoldáshoz szükséges egy `flex` és egy `C++` fájl
 
-**Fájlok:** [saját megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/elso_beadando) illetve [múlt félévből](https://github.com/gabboraron/fordprog-beadando1) valamint a [hivatalos példaprogram](https://github.com/gabboraron/fordprog-egyben/blob/master/lexikalis-pelda%20(2).zip)
+**Fájlok:** [saját megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/elso_beadando) illetve [múlt félévből](https://github.com/gabboraron/fordprog-beadando1) valamint a [hivatalos példaprogram](https://github.com/gabboraron/fordprog-egyben/blob/master/lexikalis-pelda%20(2).zip), [hivatalos, tanári megoldás](https://github.com/gabboraron/fordprog-egyben/blob/master/1-lexikalis%20(1).zip)
 
 **Flex tutorial** [kifejtve futtatható példaprogramokkal itt](https://github.com/gabboraron/fordprog-1-flex)
 
@@ -156,7 +156,7 @@ UTASITASOK:       std::cout << "kulcsszo: UTASITASOK:" 	<< std::endl;
 
 a PLanG nyelv összes szükséges szabályátirata: http://digitus.itk.ppke.hu/~flugi/bevprog_1415/atiras.html
 
-**Fájlok:** [saját megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/szintaktikus-pelda-ver2), [mintaprogram, amiből érdemes kiindulni](https://github.com/gabboraron/fordprog-egyben/blob/master/szintaktikus-pelda%20(1).zip), illetve [korábbi félév anyagai](https://github.com/gabboraron/fordprog-2-bisoncpp)
+**Fájlok:** [saját megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/szintaktikus-pelda-ver2), [mintaprogram, amiből érdemes kiindulni](https://github.com/gabboraron/fordprog-egyben/blob/master/szintaktikus-pelda%20(1).zip), [hivatalos tanári megoldás](https://github.com/gabboraron/fordprog-egyben/blob/master/2-szintaktikus.zip), illetve [korábbi félév anyagai](https://github.com/gabboraron/fordprog-2-bisoncpp)
 ### Fordítás és futtatás
 **Fordítás:** 
 ```
@@ -168,3 +168,10 @@ g++ -ocalculate calculate.cc parse.cc lex.yy.cc
 `./calculate example.calculate`
 
 [Gyakori hibaüzenetek](https://github.com/gabboraron/fordprog-2-bisoncpp#hibaüzenetek-errorok): [warning, rule cannot be matched](https://github.com/gabboraron/fordprog-2-bisoncpp#warning-rule-cannot-be-matched), [Shift/Reduce Conflicts](https://github.com/gabboraron/fordprog-2-bisoncpp#shiftreduce-conflicts), [Reduce/Reduce Conflicts](https://github.com/gabboraron/fordprog-2-bisoncpp#reducereduce-conflicts). Továbbá érdemes odafigyelni, hogy a megfelelő [megfelelő header fájlokat használjuk](https://github.com/gabboraron/fordprog-egyben/blob/master/szintaktikus-pelda-ver2/Parser.h).
+
+
+## Szemantikus elemző (3.beadandó)
+**Feladat:**
+> A kód szemantikai ellenőrzése
+
+**Fájlok:** [példakód](https://github.com/gabboraron/fordprog-egyben/blob/master/szemantikus-pelda.zip)
