@@ -240,7 +240,7 @@ A bisonc++ megengedi, hogy tetszőleges (terminális vagy nemterminális) szimb�
 }
 ```
 - Ennek az uniónak a mezőneveit használhatjuk arra, hogy meghatározzuk az egyes szimbólumokhoz rendelt szemantikus értékek típusát. Egészítsd ki az azonosító tokent így: `%token <szoveg> IDENT;`
-- Az azonosító tokeneknek most már lehet szemantikus értéke (string), de ezt be is kell állítanunk valahol. A terminálisok szemantikus értékét a lex függvény tudja beállítani. (Lásd az előadás anyagában: *kitüntetett szintetizált attribútum*.) Egészítsd ki a lex függvényt (még a return előtt) a következő sorokkal:
+- Az azonosító tokeneknek most már lehet szemantikus értéke (string), de ezt be is kell állítanunk valahol. A terminálisok szemantikus értékét a lex függvény tudja beállítani. (Lásd az előadás anyagában: *kitüntetett szintetizált attribútum*.) Egészítsd ki a [lex függvényt (még a return előtt)](https://github.com/gabboraron/fordprog-egyben/commit/9199980f1e9a4339f950055f7d740ad699dae8a6#diff-682b9c0994e5c0cdfc7c9aa502ae653e) a következő sorokkal:
 ```
 if( ret == IDENT )
 {
@@ -249,7 +249,7 @@ if( ret == IDENT )
 ```
 *(Az `YYText()` függvénnyel lehet elkérni a flex-től a felismert token szövegét. Ebből létrehozunk egy `string`-et. A Parser osztály `d_val__` adattagja olyan unió típusú, amit az imént az assign.y fájlba írtunk. Ennek a szoveg mezőjébe írhatjuk a szöveget.)*
 
-Most már elérjük az [assign.y]() fájlban a szabályok mögé írható akciók belsejében az azonosítókhoz tartozó szövegeket. Az `a: A B C` szabály esetén az `A` szimbólum szemantikus értékére `$1`, a `B` szimbóluméra `$2`, a `C` szimbóluméra `$3` hivatkozik. Ezek típusának megállapításához meg kell néznünk, hogy az unió típusnak melyik mezőjét rendeltük hozzá az adott szimbólumhoz. Ennek a mezőnek a típusa lesz a szemantikus érték típusa. (Esetünkben `string*`.)
+Most már elérjük az [assign.y](https://github.com/gabboraron/fordprog-egyben/commit/9199980f1e9a4339f950055f7d740ad699dae8a6#diff-8fc56131b7aa5e0826468f24b4798841) fájlban a szabályok mögé írható akciók belsejében az azonosítókhoz tartozó szövegeket. Az `a: A B C` szabály esetén az `A` szimbólum szemantikus értékére `$1`, a `B` szimbóluméra `$2`, a `C` szimbóluméra `$3` hivatkozik. Ezek típusának megállapításához meg kell néznünk, hogy az unió típusnak melyik mezőjét rendeltük hozzá az adott szimbólumhoz. Ennek a mezőnek a típusa lesz a szemantikus érték típusa. (Esetünkben `string*`.)
 - A deklarációkra vonatkozó szabályalternatívákat egészítsd ki úgy, hogy kiírják a standard kimenetre az éppen deklarált változó nevét!
 ```
 NATURAL IDENT
