@@ -1,12 +1,17 @@
 %baseclass-preinclude "semantics.h"
 %lsp-needed
 
+%union
+{
+  std::string *szoveg;
+}
+
+%token <szoveg> IDENT;
 %token NATURAL;
 %token BOOLEAN;
 %token TRUE;
 %token FALSE;
 %token NUMBER;
-%token IDENT;
 %token ASSIGN;
 
 %%
@@ -23,6 +28,9 @@ declarations:
 
 declaration:
     NATURAL IDENT
+	{
+	  std::cout << *$2 << std::endl;
+	}
 |
     BOOLEAN IDENT
 ;

@@ -18,6 +18,10 @@ inline int Parser::lex()
 {
     int ret = lexer.yylex();
     d_loc__.first_line = lexer.lineno();
+    if( ret == IDENT )
+	{
+	  d_val__.szoveg = new std::string(lexer.YYText());
+	}
     return ret;
 }
 
