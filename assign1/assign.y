@@ -4,6 +4,7 @@
 %union
 {
   std::string *szoveg;
+  type* tipus;
 }
 
 %token <szoveg> IDENT;
@@ -66,14 +67,38 @@ assignments:
 
 assignment:
     IDENT ASSIGN expr
+{
+ if( szimbolumtabla.count(*$1) < 1 )
+  {
+    std::stringstream ss;
+    ss << "Nem deklarált valtozo: " << *$1 << ".\n" << std::endl;
+    error( ss.str().c_str() );
+  }
+  if( szimbolumtabla[*$1].var_type != *$3 )
+	{
+	  error( "Tipushibas ertekadas.\n" );
+	}	
+}
 ;
 
 expr:
     IDENT
+{
+$$ = new type(szimbolumtabla[*$1].var_type);
+}
 |
     NUMBER
+{
+$$ = new type(natural);
+}
 |
     TRUE
+{
+$$ = new type(boolean);
+}
 |
     FALSE
+{
+$$ = new type(boolean);
+}
 ;
