@@ -29,6 +29,7 @@ class Parser: public ParserBase
         void nextToken();
         void print__();
         void exceptionHandler__(std::exception const &exc);
+	std::map<std::string,var_data> szimbolumtabla;
 };
 
 

@@ -1,4 +1,4 @@
-%baseclass-preinclude <iostream>
+%baseclass-preinclude "semantics.h"
 %lsp-needed
 
 %token NATURAL;
