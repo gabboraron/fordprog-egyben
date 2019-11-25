@@ -208,3 +208,18 @@ m := n
 - Futtasd a programot a helyes, a [lexikális hibás](https://github.com/gabboraron/fordprog-egyben/blob/master/assign1/peldak/2.lex-hibas) és a [szintaktikus hibás](https://github.com/gabboraron/fordprog-egyben/blob/master/assign1/peldak/3.szintaktikus-hibas) példákra!
 - Figyeld meg, hogy a program nem jelez hibát a [szemantikus hibás](https://github.com/gabboraron/fordprog-egyben/blob/master/assign1/peldak/4.szemantikus-hibas) példákra! Ennek a feladatsornak az a célja, hogy kiszűrjük ezeket a hibákat.
 
+#### 2. lépés
+
+Szimbólumtáblát szeretnénk létrehozni. Az egyszerűség kedvéért ezt a C++ standard könyvtárának `map` adattípusával fogjuk megvalósítani. A map kulcsa a változó neve (`string`) lesz, a hozzárendelt érték pedig tartalmazni fogja a változó típusát és a deklarációjának sorát. A szükséges C++ kódot egy új fejállományba, a [semantics.h]() fájlba írjuk.
+
+- A semantics.h fájlban include-old az `iostream`, `string` és `map` standard fejállományokat!
+- Hozz létre ugyanitt egy felsorolási típust a programnyelvben előforduló két típus reprezentálásához!
+  `enum type { natural, boolean };`
+- Készíts egy `var_data` nevű rekord típust, amit az egyes változókhoz hozzárendelt adatok tárolására fogunk használni. Két mezője legyen:
+  - `decl_row` azt fogja tárolni, hogy az adott változó a program hányadik sorában volt deklarálva.
+  - `var_type` a változó típusát tárolja. Ez a mező az imént definiált type típusú legyen!
+- Írj a `var_data` rekordhoz egy két paraméteres konstruktort is, hogy könnyen lehessen inicializálni az ilyen típusú objektumokat létrehozásukkor. Legyen továbbá egy nulla paraméteres (üres törzsű) konstruktor is, mert erre majd szükség lesz akkor, amikor ilyen típusú elemeket akarunk egy `map`-ben tárolni!
+- A *Parser.h* fejállományban add hozzá a Parser osztály privát adattagjai közé a szimbólumtáblát:
+  `std::map<std::string,var_data> szimbolumtabla;`
+- Az *assign.y* fájl elején cseréld le a `%baseclass-preinclude` direktívában az `<iostream>` fejállományt `"semantics.h"`-ra, hogy az imént készített fejállomány része legyen a projektnek!
+Próbáld lefordítani a projektet, és javítsd az esetleges hibákat!
