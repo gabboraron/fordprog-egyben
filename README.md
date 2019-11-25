@@ -292,10 +292,10 @@ A `stringstream` típusú `ss`-ből a `str()` tagfüggvénnyel lehet lekérni a 
 #### 5. lépés
 
 Azt is szeretnénk ellenőrizni, hogy az értékadásokban használt változók deklarálva vannak-e.
-- Egészítsd ki az értékadásokat és a kifejezéseket leíró szabályoknak az IDENT-et tartalmazó alternatíváit úgy, hogy hibaüzenetet kapjunk nem deklarált változók esetén!
+- Egészítsd ki az értékadásokat és a kifejezéseket leíró szabályoknak az `IDENT`-et tartalmazó alternatíváit úgy, hogy hibaüzenetet kapjunk nem deklarált változók esetén!
 - Ellenőrizd, hogy az 5. és 6. szemantikus hibás tesztfájlra valóban hibaüzenetet ad-e a fordító!
 Az értékadások típushelyességének ellenőrzéséhez szükséges, hogy szemantikus értéket adjunk a kifejezésekhez. A konkrét esetben ez lehet a korábban definiált type felsorolási típusú érték. A kifejezéseket leíró szabályokban be fogjuk állítani a kifejezés szemantikus értékét (a kifejezés típusát) a szabály jobboldala alapján (lásd az előadás anyagában: szintetizált attribútum). A szabály baloldalának szemantikus értékére a `$$` jelöléssel hivatkozhatunk az akciókban. Ha nemterminálisokhoz szeretnénk szemantikus értéket hozzárendelni, akkor ezt is fel kell tüntetni a fájl elején. Mivel ez már nem token, ezért a `%type <unió_megfelelő_mezője> nemterminális_neve` szintaxist kell használni.
-- Egészítsd ki az assign.y fájlban korábban definiált uniót egy `type*` típusú mezővel, és tüntesd fel az `expr` nemterminálishoz rendelt szemantikus érték típusát az unióban létrehozott új mezőnév segítségével!
+- Egészítsd ki az [assign.y](https://github.com/gabboraron/fordprog-egyben/commit/322c7e6baa648aa0ac13b8b69735d65b2c7becba) fájlban korábban definiált uniót egy `type*` típusú mezővel, és tüntesd fel az `expr` nemterminálishoz rendelt szemantikus érték típusát az unióban létrehozott új mezőnév segítségével!
 - Egészítsd ki a kifejezéseket leíró négy szabályalternatíva akcióit olyan utasításokkal, amelyek beállítják a szabály baloldalának szemantikus értékét (a kifejezés típusát)!
 Például az `IDENT` alternatíva esetén a szimbólumtáblából kérhetjük le az azonosító típusát:
 
@@ -310,4 +310,4 @@ if( szimbolumtabla[*$1].var_type != *$3 )
 }
 ```
 - Most már valamennyi szemantikus hibás példára hibát kell jeleznie a programnak.
-- Az `IDENT` és `expr` szimbólumok szemantikus értékeit minden esetben (a lex függvényben és a szabályokhoz csatolt akciókban is) a new kulcsszó segítségével, dinamikus memóriafoglalással hoztuk létre. Azokban az akciókban, ahol ezek a szimbólumok a szabály jobb oldalán állnak, felhasználtuk az értékeket. A program memóriahatékonyságának érdekében azonban a felhasználás után fel kell szabadítani a lefoglalt memóriát, hogy elkerüljük a memóriaszivárgást. Nézd végig az összes szabályt, és ahol a jobb oldalon IDENT vagy expr áll, ott az akció végére írd be a következő utasítást: delete $i (ahol i az `IDENT` vagy `expr` sorszáma).
+- Az `IDENT` és `expr` szimbólumok szemantikus értékeit minden esetben (a lex függvényben és a szabályokhoz csatolt akciókban is) a new kulcsszó segítségével, dinamikus memóriafoglalással hoztuk létre. Azokban az akciókban, ahol ezek a szimbólumok a szabály jobb oldalán állnak, felhasználtuk az értékeket. A program memóriahatékonyságának érdekében azonban a felhasználás után fel kell szabadítani a lefoglalt memóriát, hogy elkerüljük a memóriaszivárgást. Nézd végig az összes szabályt, és ahol a jobb oldalon `IDENT` vagy `expr` áll, ott az akció végére írd be a következő utasítást: `delete $i` (ahol `i` az `IDENT` vagy `expr` sorszáma).
