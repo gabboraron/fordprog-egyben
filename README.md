@@ -258,3 +258,32 @@ NATURAL IDENT
 }
 ```
 - Futtasd a helyes példára a programot!
+
+#### 4. lépés
+
+Ahelyett, hogy a standard kimenetre írnánk a deklarált változók nevét, most betesszük az adataikat a szimbólumtáblába. A `map` adattípusnak van `[]` operátora, ennek segítségével lehet beállítani és lekérdezni az adott kulcshoz tartozó értéket.
+- Írd át a deklarációkhoz tartozó szabályalternatívák programját úgy, hogy a változót és adatait szúrja be a szimbólumtáblába!
+
+```
+NATURAL IDENT
+{
+  szimbolumtabla[*$2] = var_data( d_loc__.first_line, natural );
+}
+```
+
+- Ellenőrizzük le a beszúrás előtt, hogy nem volt-e már ugyanezzel a névvel korábban deklaráció! A map adattípus `count` függvénye megadja, hogy egy adott kulcshoz hány elem van a map-ben (`0` vagy `1`).
+
+```
+  if( szimbolumtabla.count(*$2) > 0 )
+  {
+    std::stringstream ss;
+    ss << "Ujradeklaralt valtozo: " << *$2 << ".\n"
+    << "Korabbi deklaracio sora: " << szimbolumtabla[*$2].decl_row << std::endl;
+    error( ss.str().c_str() );
+  }
+  ```
+
+A hibaüzenet szövegének összegyűjtéséhez és a korábbi deklaráció sorának szöveggé konvertálásához a `stringstream` osztályt használtuk. Ehhez be kell `include`-olni a `semantics.h` fájlba a `sstream` standard fejállományt!
+A `stringstream` típusú `ss`-ből a `str()` tagfüggvénnyel lehet lekérni a benne összegyűlt `string`-et. Mivel az `error` függvény (lásd a Parser.ih-ban!) string helyett `C` stílusú karakterláncot vár paraméterként, ezért a `c_str()` függvény segítségével konvertálunk.
+- Töltsd ki hasonlóan a logikai változók deklarációjához tartozó szabályalternatívát is, de ott a szimbólumtáblába logikai változót szúrj be!
+- A programnak most már a 4.szemantikus-hibas fájlra hibát kell jeleznie.
