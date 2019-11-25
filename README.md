@@ -5,6 +5,7 @@
 - [Lexikális elemző ~ 1. beadandó](https://github.com/gabboraron/fordprog-egyben#lexikális-elemző-1-beadandó)
   - [A lexikális elemző érdekesebb részei](https://github.com/gabboraron/fordprog-egyben#megoldás-érdekes-részei)
 - [Szintaktikus elemző ~ 2. beadandó](https://github.com/gabboraron/fordprog-egyben#szintaktikus-elemző-2-beadandó)
+- [Szemantikus ellenörző ~ 3. beadandó](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#szemantikus-elemző-3beadandó)
 
 ---
 
@@ -101,6 +102,8 @@ Minden változót a típusának és nevének megadásával kell deklarálni, tö
 - Ciklus: `CIKLUS AMIG feltétel utasítások CIKLUS_VEGE` alakú. A feltétel logikai kifejezés. A ciklus utasításlistája nem lehet üres. A megszokott módon, elöltesztelős ciklusként működik.
 - Elágazás: `HA feltétel AKKOR utasítások HA_VEGE` vagy `HA feltétel AKKOR utasítások` `KULONBEN utasitasok HA_VEGE` alakú. A feltétel logikai kifejezés. Az egyes ágak utasításlistái nem lehetnek üresek. A megszokott módon működik.
 
+---
+
 ## Lexikális elemző (1. beadandó)
 **Feladat:**
 > Lexikális hiba észlelése esetén hibajelzést kell adni, ami tartalmazza a hiba sorának számát; ezután a program befejeződhet, nem kell folytatni az elemzést.
@@ -144,6 +147,8 @@ UTASITASOK:       std::cout << "kulcsszo: UTASITASOK:" 	<< std::endl;
 ```
 ({CHAR}|{UNDERSCORE})+({CHAR}|{DIGIT}|{UNDERSCORE})*			std::cout << "azonosito: " << YYText() << std::endl;
 ```
+
+---
 
 ## Szintaktikus elemző (2. beadandó)
 **Feladat:**
