@@ -231,7 +231,7 @@ Az [assign.y](https://github.com/gabboraron/fordprog-egyben/blob/master/assign1/
 - A deklaráció sorának száma: ez a `d_loc__.first_line` érték lesz, amit a `lex` függvény állít be. ([Lásd az 1. lépést!](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#1-lépés))
 - A változó típusa: ez onnan derül ki, hogy éppen melyik szabály-alternatíva az aktív (`NATURAL IDENT` vagy `BOOLEAN IDENT`).
 - A változó neve: ezt csak a lexikális elemző tudja! El kell érnünk, hogy ez továbbításra kerüljön a szintaktikus elemzőhöz.
-A bisonc++ megengedi, hogy tetszőleges (terminális vagy nemterminális) szimbólum mellé egy ún. szemantikus értéket (lásd az előadás anyagában: attribútum) rendeljünk. Mivel különböző szimbólumokhoz különböző típusú szemantikus érték rendelhető, ezért létre kell hoznunk egy unió típust ezekhez. Erre a bisonc++ külön szintaxist biztosít, amiből majd egy valódi C++ unió típust fog generálni. Ennek most egyetlen sora lesz, hiszen kezdetben csak a változókhoz szeretnénk szemantikus információként hozzárendelni a nevüket.
+A bisonc++ megengedi, hogy tetszőleges (terminális vagy nemterminális) szimbólum mellé egy ún. szemantikus értéket (lásd az előadás anyagában: [attribútum](http://deva.web.elte.hu/fordprog/11-ATG-handout.pdf)) rendeljünk. Mivel különböző szimbólumokhoz különböző típusú szemantikus érték rendelhető, ezért létre kell hoznunk egy unió típust ezekhez. Erre a bisonc++ külön szintaxist biztosít, amiből majd egy valódi C++ unió típust fog generálni. Ennek most egyetlen sora lesz, hiszen kezdetben csak a változókhoz szeretnénk szemantikus információként hozzárendelni a nevüket.
 - Az assign.y fájlhoz az első `%token` deklaráció elé add hozzá a következőt:
 ```
 %union
