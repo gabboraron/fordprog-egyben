@@ -1,0 +1,7 @@
+natural n
+natural m
+boolean b
+boolean m
+n := 0
+b := false
+m := n
