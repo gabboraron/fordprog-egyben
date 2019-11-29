@@ -111,7 +111,7 @@ Minden változót a típusának és nevének megadásával kell deklarálni, tö
 > 
 > a megoldáshoz szükséges egy `flex` és egy `C++` fájl
 
-**Fájlok:** [saját megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/elso_beadando) illetve [múlt félévből](https://github.com/gabboraron/fordprog-beadando1) valamint a [hivatalos példaprogram](https://github.com/gabboraron/fordprog-egyben/blob/master/lexikalis-pelda%20(2).zip), [hivatalos, tanári megoldás](https://github.com/gabboraron/fordprog-egyben/blob/master/1-lexikalis%20(1).zip)
+**Fájlok:** [saját megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/elso_beadando) illetve [múlt félévből](https://github.com/gabboraron/fordprog-beadando1) valamint a [hivatalos példaprogram](https://github.com/gabboraron/fordprog-egyben/blob/master/lexikalis-pelda%20(2).zip), [hivatalos, tanári megoldás](https://github.com/gabboraron/fordprog-egyben/blob/master/1-lexikalis%20(1).zip), [régebbi WHILE feladatra adott megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/1-lexikalis)
 
 **Flex tutorial** [kifejtve futtatható példaprogramokkal itt](https://github.com/gabboraron/fordprog-1-flex)
 
@@ -162,7 +162,7 @@ UTASITASOK:       std::cout << "kulcsszo: UTASITASOK:" 	<< std::endl;
 
 a PLanG nyelv összes szükséges szabályátirata: http://digitus.itk.ppke.hu/~flugi/bevprog_1415/atiras.html
 
-**Fájlok:** [saját megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/szintaktikus-pelda-ver2), [mintaprogram, amiből érdemes kiindulni](https://github.com/gabboraron/fordprog-egyben/blob/master/szintaktikus-pelda%20(1).zip), [hivatalos tanári megoldás](https://github.com/gabboraron/fordprog-egyben/blob/master/2-szintaktikus.zip), illetve [korábbi félév anyagai](https://github.com/gabboraron/fordprog-2-bisoncpp)
+**Fájlok:** [saját megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/szintaktikus-pelda-ver2), [mintaprogram, amiből érdemes kiindulni](https://github.com/gabboraron/fordprog-egyben/blob/master/szintaktikus-pelda%20(1).zip), [hivatalos tanári megoldás](https://github.com/gabboraron/fordprog-egyben/blob/master/2-szintaktikus.zip), illetve [korábbi félév anyagai](https://github.com/gabboraron/fordprog-2-bisoncpp), [régebbi WHILE feladatra adott megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/2-szintaktikus)
 ### Fordítás és futtatás
 **Fordítás:** 
 ```
@@ -182,7 +182,7 @@ g++ -ocalculate calculate.cc parse.cc lex.yy.cc
 **Feladat:**
 > A kód szemantikai ellenőrzése
 
-**Fájlok:** [példakód](https://github.com/gabboraron/fordprog-egyben/blob/master/szemantikus-pelda.zip)
+**Fájlok:** [példakód](https://github.com/gabboraron/fordprog-egyben/blob/master/szemantikus-pelda.zip), [régebbi WHILE feldatra adott megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/3-szemantikus)
 
 ### Tutorial:
 forrás: [deva.web.elte.hu/szemantikus.hu.html](http://deva.web.elte.hu/szemantikus.hu.html)
@@ -311,6 +311,10 @@ if( szimbolumtabla[*$1].var_type != *$3 )
 ```
 - Most már valamennyi szemantikus hibás példára hibát kell jeleznie a programnak.
 - Az `IDENT` és `expr` szimbólumok szemantikus értékeit minden esetben (a lex függvényben és a szabályokhoz csatolt akciókban is) a new kulcsszó segítségével, dinamikus memóriafoglalással hoztuk létre. Azokban az akciókban, ahol ezek a szimbólumok a szabály jobb oldalán állnak, felhasználtuk az értékeket. A program memóriahatékonyságának érdekében azonban a felhasználás után fel kell szabadítani a lefoglalt memóriát, hogy elkerüljük a memóriaszivárgást. Nézd végig az összes szabályt, és ahol a jobb oldalon `IDENT` vagy `expr` áll, ott az akció végére írd be a következő utasítást: `delete $i` (ahol `i` az `IDENT` vagy `expr` sorszáma).
+
+## Kódgenerálás
+
+**Fájlok:**[régebbi WHILE feladatra adott megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/4-kodgen)
 
 ## Irodalom
 - [Előadás anyaga](https://deva.web.elte.hu/pubwiki/doku.php?id=fporak)
