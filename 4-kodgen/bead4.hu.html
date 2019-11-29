@@ -1,0 +1,58 @@
+<HTML>
+ <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf8">
+</HEAD>
+<BODY background="image/back.jpg" LINK="#000000" ALINK="#000000" VLINK="#000000">
+<div align="center">
+<TABLE border="0" cellspacing="0" cellpadding="0" bgcolor="#ffeac2" width="80%" summary="">
+<TR>
+<TD valign="top" align="left"><IMG src="image/corner1.gif" width="13" height="13" alt=""></IMG></TD>
+<TD>&nbsp;</TD>
+<TD valign="top" align="right"><IMG src="image/corner2.gif" width="13" height="13" alt=""></IMG></TD>
+</TR>
+<TR><TD>&nbsp;</TD><TD>
+<FONT face="Arial">
+<div align="center">
+<H2>Fordítóprogramok, 4. beadandó</H2>
+</div>
+<UL>
+<LI><FONT color="red">Tesztfájlok a beadandók ellenőrzéséhez</FONT> <A href='fordprog/while-tesztfajlok.zip' target='_blank'>letölthetőek</A>.
+<LI>Határidő: december 19. (péntek) éjfél
+<LI>Feladat: kódgenerátor készítése <A href="while-language.hu.html">ehhez a nyelvhez</A>
+ <UL>
+ <LI>flex, bisonc++ és C++ segítségével
+ <LI>a programnak parancssori paraméterben lehessen megadni az elemzendő fájl nevét
+ <LI>a program a helyes forrásfájlok esetén írja ki a megfelelő NASM assembly programot, és legyen a visszatérési értéke 0
+ <LI>hiba észlelése esetén adjon hibaüzenetet és a visszatérési értéke 1 legyen
+ <LI>példaprogram <A href="http://deva.web.elte.hu/fordprog/kodgen-pelda.zip">letölthető</A>
+ <LI>Egész számok és logikai értékek beolvasására, kiírására használhatóak a <TT>be_egesz</TT>, <TT>ki_egesz</TT> stb. függvények az <A href="fordprog/io.c">io.c</A> fájlból.
+ </UL>
+<LI>Beadás módja:
+ <UL>
+<LI><A href="https://bead.inf.elte.hu/" target='_blank'>Ezen az oldalon</A> kell a <I>Kódgenerátor</I> feladatra beadni a forrásfájlokat az alábbi formában:<BR>
+<TT>
+flex forrásfájl<BR>
+&#35;&#35;&#35;<BR>
+bisonc++ forrásfájl<BR>
+&#35;&#35;&#35;<BR>
+Parser.h headerfile<BR>
+&#35;&#35;&#35;<BR>
+Parser.ih implementációs headerfile<BR>
+&#35;&#35;&#35;<BR>
+semantics.h headerfile<BR>
+&#35;&#35;&#35;<BR>
+c++ forrásfájl (main)<BR>
+</TT>
+Automatikus tesztelés ehhez a feladathoz nem lesz!
+</UL>
+</UL>
+</FONT>
+</TD><TD>&nbsp;</TD></TR>
+<TR>
+<TD valign="bottom" align="left"><IMG src="image/corner.gif" width="13" height="13" alt=""></IMG></TD>
+<TD>&nbsp;</TD>
+<TD valign="bottom" align="right"><IMG src="image/corner3.gif" width="13" height="13" alt=""></IMG></TD>
+</TR>
+</TABLE>
+</div>
+</BODY>
+</HTML>
