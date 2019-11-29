@@ -1,0 +1,60 @@
+<HTML>
+ <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf8">
+</HEAD>
+<BODY background="image/back.jpg" LINK="#000000" ALINK="#000000" VLINK="#000000">
+<div align="center">
+<TABLE border="0" cellspacing="0" cellpadding="0" bgcolor="#ffeac2" width="80%" summary="">
+<TR>
+<TD valign="top" align="left"><IMG src="image/corner1.gif" width="13" height="13" alt=""></IMG></TD>
+<TD>&nbsp;</TD>
+<TD valign="top" align="right"><IMG src="image/corner2.gif" width="13" height="13" alt=""></IMG></TD>
+</TR>
+<TR><TD>&nbsp;</TD><TD>
+<FONT face="Arial">
+<div align="center">
+<H2>Fordítóprogramok, 2. beadandó</H2>
+</div>
+<UL>
+<LI><FONT color="red">Tesztfájlok a beadandók ellenőrzéséhez</FONT> <A href="fordprog/while-tesztfajlok.zip">letölthetőek</A>.
+<LI>Határidő: november 7. (péntek) éjfél
+<LI>Feladat: szintaktikus elemző elkészítése <A href="while-language.hu.html">ehhez a nyelvhez</A>
+ <UL>
+ <LI>bisonc++ segítségével
+ <LI>a programnak parancssori paraméterben lehessen megadni az elemzendő fájl nevét
+ <LI>a program minden alkalmazott szabályhoz egy sort írjon a képernyőre, például<BR>
+    <TT>ertekadas -&gt; azonosito ERTEKADAS kifejezes.<BR>
+        utasitas -&gt; ertekadas<BR>
+    ...<BR>
+    </TT>
+ <LI>szintaktikus hiba észlelése esetén hibajelzést kell adni, és a fordítóprogram visszatérési értéke 1 legyen (azaz <TT>exit(1)</TT> utasítást kell végrehajtani a hibajelzés után)
+ <LI>ha a forrásfájl szintaktikusan helyes, akkor a fordítóprogram visszatérési értéke legyen 0 (azaz <TT>return 0</TT> utasítással fejeződjön be)
+ <LI>ebből a <A href="http://deva.web.elte.hu/fordprog/szintaktikus-pelda.zip">példaprogramból érdemes kiindulni</A>
+ <LI>a <A href='fordprog/while-tesztfajlok.zip' target='_blank'>tesztfájlok</A> közül a <TT>lexikalis_hiba</TT> és <TT>szintaktikus_hiba</TT> könyvtár fájljaira kell hibát jelezni, a többit el kell fogadni.
+ </UL>
+<LI>Beadás módja:
+ <UL>
+<LI><A href="https://bead.inf.elte.hu/" target='_blank'>Ezen az oldalon</A> kell a <I>szintaktikus elemző</I> feladatra beadni a forrásfájlokat az alábbi formában:<BR>
+<TT>
+flex forrásfájl (.l)<BR>
+&#35;&#35;&#35;<BR>
+bisonc++ forrásfájl (.y)<BR>
+&#35;&#35;&#35;<BR>
+Parser.h headerfile<BR>
+&#35;&#35;&#35;<BR>
+Parser.ih implementációs headerfile<BR>
+&#35;&#35;&#35;<BR>
+c++ forrásfájl (main)<BR>
+</TT>
+</UL>
+</UL>
+</FONT>
+</TD><TD>&nbsp;</TD></TR>
+<TR>
+<TD valign="bottom" align="left"><IMG src="image/corner.gif" width="13" height="13" alt=""></IMG></TD>
+<TD>&nbsp;</TD>
+<TD valign="bottom" align="right"><IMG src="image/corner3.gif" width="13" height="13" alt=""></IMG></TD>
+</TR>
+</TABLE>
+</div>
+</BODY>
+</HTML>
