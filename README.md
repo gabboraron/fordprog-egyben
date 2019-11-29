@@ -7,7 +7,9 @@
 - [Szintaktikus elemző ~ 2. beadandó](https://github.com/gabboraron/fordprog-egyben#szintaktikus-elemző-2-beadandó)
 - [Szemantikus ellenörző ~ 3. beadandó](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#szemantikus-elemző-3beadandó)
   - [Tutorial](https://github.com/gabboraron/fordprog-egyben#tutorial) 
+- [Kódgenerálás](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#kódgenerálás)
 - [Irodalom, jegyzetek, példák, előadás anyag, könyvek](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#irodalom)
+
 ---
 
 ## Példakód:
