@@ -184,7 +184,7 @@ g++ -ocalculate calculate.cc parse.cc lex.yy.cc
 **Feladat:**
 > A kód szemantikai ellenőrzése
 
-**Fájlok:** [példakód](https://github.com/gabboraron/fordprog-egyben/blob/master/szemantikus-pelda.zip), [régebbi WHILE feldatra adott megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/3-szemantikus)
+**Fájlok:** [példakód](https://github.com/gabboraron/fordprog-egyben/blob/master/szemantikus-pelda.zip), [régebbi WHILE feldatra adott megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/3-szemantikus), [előző félév anyaga](https://github.com/gabboraron/fordprog-osszefoglalo#3---szemantikus)
 
 ### Tutorial:
 forrás: [deva.web.elte.hu/szemantikus.hu.html](http://deva.web.elte.hu/szemantikus.hu.html)
@@ -316,7 +316,7 @@ if( szimbolumtabla[*$1].var_type != *$3 )
 
 ## Kódgenerálás
 
-**Fájlok:**[régebbi WHILE feladatra adott megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/4-kodgen)
+**Fájlok:**[régebbi WHILE feladatra adott megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/4-kodgen), [előző félév anyaga](https://github.com/gabboraron/fordprog-osszefoglalo#4---kódgenerátor)
 
 ## Irodalom
 - [Előadás anyaga](https://deva.web.elte.hu/pubwiki/doku.php?id=fporak)
