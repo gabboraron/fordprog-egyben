@@ -311,3 +311,8 @@ if( szimbolumtabla[*$1].var_type != *$3 )
 ```
 - Most már valamennyi szemantikus hibás példára hibát kell jeleznie a programnak.
 - Az `IDENT` és `expr` szimbólumok szemantikus értékeit minden esetben (a lex függvényben és a szabályokhoz csatolt akciókban is) a new kulcsszó segítségével, dinamikus memóriafoglalással hoztuk létre. Azokban az akciókban, ahol ezek a szimbólumok a szabály jobb oldalán állnak, felhasználtuk az értékeket. A program memóriahatékonyságának érdekében azonban a felhasználás után fel kell szabadítani a lefoglalt memóriát, hogy elkerüljük a memóriaszivárgást. Nézd végig az összes szabályt, és ahol a jobb oldalon `IDENT` vagy `expr` áll, ott az akció végére írd be a következő utasítást: `delete $i` (ahol `i` az `IDENT` vagy `expr` sorszáma).
+
+## Irodalom
+- [Előadás anyaga](https://deva.web.elte.hu/pubwiki/doku.php?id=fporak)
+- [Fordítóprogramok és formális nyelvek - Király Roland 2007](https://github.com/gabboraron/books/blob/master/Ford%C3%ADt%C3%B3programok.%20%C3%A9s%20form%C3%A1lis%20nyelvek.pdf)
+- [Assembly programozás - Kitlei Róbert 2007](https://github.com/gabboraron/books/blob/master/Kitlei_Robert-Assembly_prgramozas.pdf)
