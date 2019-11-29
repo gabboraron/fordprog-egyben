@@ -1,0 +1,109 @@
+<HTML>
+ <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf8">
+</HEAD>
+<BODY background="image/back.jpg" LINK="#000000" ALINK="#000000" VLINK="#000000">
+<div align="center">
+<TABLE border="0" cellspacing="0" cellpadding="0" bgcolor="#ffeac2" width="80%" summary="">
+<TR>
+<TD valign="top" align="left"><IMG src="image/corner1.gif" width="13" height="13" alt=""></IMG></TD>
+<TD>&nbsp;</TD>
+<TD valign="top" align="right"><IMG src="image/corner2.gif" width="13" height="13" alt=""></IMG></TD>
+</TR>
+<TR><TD>&nbsp;</TD><TD>
+<FONT face="Arial">
+<div align="center">
+<H2>A beadandóhoz használandó programozási nyelv leírása</H2>
+</div>
+<TABLE border="0" summary=""><TR><TD width="50%" valign="top"><FONT face="Arial">
+<div align="center">
+A félév során az alábbi programozási nyelvhez kell fordítóprogramot írni <I>flex</I> és <I>bisonc++</I> segítségével.<BR><BR>
+A nyelv az oktatási célokra gyakran felhasznált <I>While nyelv</I> egy változata.<BR><BR>
+A jobbra látható példaprogram a bemeneten kapott nemnegatív egész szám legkisebb valódi osztóját számolja ki.<BR><BR>
+<FONT color="red">Tesztfájlok</FONT> <A href="fordprog/while-tesztfajlok.zip">letölthetőek</A>!<BR><BR>
+</div>
+</FONT>
+</TD>
+<TD><div align="center">
+<TABLE border="1" summary=""><TR><TD>
+<TT>
+program oszto<BR>
+&nbsp;&nbsp;integer a;<BR>
+&nbsp;&nbsp;integer i;<BR>
+&nbsp;&nbsp;integer oszto;<BR>
+&nbsp;&nbsp;boolean vanoszto;<BR>
+begin<BR>
+&nbsp;&nbsp;read( a );<BR>
+&nbsp;&nbsp;vanoszto := false;<BR>
+&nbsp;&nbsp;i := 2;<BR>
+&nbsp;&nbsp;while not vanoszto and i &lt; a do<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if a mod i = 0 then<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vanoszto := true;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oszto := i;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;endif<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i := i+1;<BR>
+&nbsp;&nbsp;done<BR>
+&nbsp;&nbsp;if vanoszto then<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;write( vanoszto );<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;write( oszto );<BR>
+&nbsp;&nbsp;else<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;write( vanoszto );<BR>
+&nbsp;&nbsp;endif<BR>
+end<BR>
+</TT>
+</TD></TR></TABLE>
+</div>
+</TD></TR>
+</TABLE><BR>
+A nyelv definíciója:
+<UL>
+<LI>A forrásfájlok a következő ASCII <B>karaktereket</B> tartalmazhatják:
+    <UL>
+    <LI>az angol abc kis és nagybetűi
+    <LI>számjegyek (0-9)
+    <LI><TT>():+-*&lt;&gt;=_;#</TT>
+    <LI>szóköz, tab, sorvége
+    <LI>megjegyzések belsejében pedig tetszőleges karakterek állhatnak
+    </UL>
+Minden más karakter esetén hibajelzést kell adnia a fordítónak. A nyelv case-sensitive, azaz számít a kis és nagybetűk közötti különbség.<BR>
+<LI>A nyelv <B>kulcsszavai</B> a következők:<BR>
+<TT>program begin end integer boolean true false div mod and or not skip if then else endif while do done read write</TT><BR>
+<LI><B>Azonosítók</B>: a változók nevei, illetve a program neve betűkből, számjegyekből és _ jelből állhatnak, de betűvel kell kezdődniük, és nem ütközhetnek egyik kulcsszóval sem.
+<LI><B>Típusok</B>:
+    <UL>
+    <LI><TT>integer</TT>: négy bájtos, előjel nélküli egészként kell megvalósítani; konstansai számjegyekből állnak és nincs előttük előjel
+    <LI><TT>boolean</TT>: egy bájton kell ábrázolni; értékei: <TT>false</TT>, <TT>true</TT>
+    </UL>
+<LI><B>Megjegyzések</B>: a <TT>#</TT> karakterektől kezdve a sor végéig. Megjegyzések a program tetszőleges pontján előfordulhatnak, a fordítást és a keletkező programkódot nem befolyásolják.
+<LI><B>A program felépítése</B>:
+A program szignatúrából, deklarációs részből, törzsből és befejezésből áll. A szignatúra tartalma: <TT>program</TT> <I>név</I>, ahol a név tetszőleges azonosító. A szignatúrát a deklarációs rész követi, majd <TT>begin</TT> kulcsszó vezeti be a törzset. A deklarációs rész lehet üres is. A törzs legalább egy utasítást tartalmaz. A befejezést az <TT>end</TT> kulcsszó jelzi.
+<LI><B>Változódeklarációk</B>: minden változót <I>típus</I> <I>név</I> <TT>;</TT> alakban kell deklarálni, több azonos típusú változó esetén mindegyiket külön-külön.
+<LI><B><TT>integer</TT> típusú kifejezések</B>: számkonstansok, <TT>integer</TT> típusú változók és az ezekből a <TT>+</TT> (összedás), <TT>-</TT> (kivonás), <TT>*</TT> (szorzás), <TT>div</TT> (egészosztás), <TT>mod</TT> (maradékképzés) infix operátorokkal és zárójelekkel felépített kifejezések.
+<LI><B><TT>boolean</TT> típusú kifejezések</B>: <TT>true</TT> és <TT>false</TT>, két <TT>integer</TT> típusú kifejezésből az <TT>=</TT> (egyenlőség), <TT>&lt;</TT> (kisebb), <TT>&gt;</TT> (nagyobb) infix operátorral, valamint az ezekből <TT>and</TT> (konjunkció), <TT>or</TT> (diszjunkció), = (egyenlőség) infix és a <TT>not</TT> (negáció) prefix operátorral és zárójelekkel felépített kifejezések.
+<LI>Az infix operátorok mind balasszociatívak és a precedenciájuk növevő sorrendben a következő:
+    <UL>
+    <LI><TT>or</TT> <TT>and</TT>
+    <LI><TT>=</TT>
+    <LI>&lt; &gt;
+    <LI><TT>+ -</TT>
+    <LI><TT>* div mod</TT>
+    </UL>
+<LI><B><TT>skip</TT> utasítás</B>: a változók értékeinek megváltoztatása nélküli továbblépés.
+<LI><B>Értékadás</B>: a <TT>:=</TT> operátorral. Baloldalán egy változó, jobboldalán egy - a változóéval megegyező típusú - kifejezés állhat.
+<LI><B>A <TT>read</TT> utasítás</B> a megadott változóba olvas be egy megfelelő típusú értéket a billentyűzetről. (Megvalósítása: meg kell hívni a <I>be_egesz</I> eljárást, amit a mellékelt C fájl tartalmaz. A beolvasott érték az eax (logikai típus esetén az al) regiszterben lesz.)
+<LI><B>A <TT>write</TT> utasítás</B> a megadott kifejezés értékét a képernyőre írja (és egy sortöréssel fejezi be). (Megvalósítása: meg kell hívni a <I>ki_egesz</I> eljárást, amit a mellékelt C fájl tartalmaz. Paraméterként a kiírandó értéket (mindkét esetben 4 bájtot) kell a verembe tenni.)
+<LI><B>Ciklus</B>: <TT>while</TT> <I>feltétel</I> <TT>do</TT> <I>utasítások</I> <TT>done</TT><BR>
+A feltétel logikai kifejezés, és a ciklus belsejében legalább egy utasításnak kell lennie. A megszokott módon, elöltesztelős ciklusként működik.
+<LI><B>Elágazás</B>: <TT>if</TT> <I>feltétel</I> <TT>then</TT> utasítások <TT>endif</TT><BR>vagy<BR>
+<TT>if</TT> <I>feltétel</I> <TT>then</TT> utasítások <TT>else</TT> utasitasok <TT>endif</TT><BR>
+A feltétel logikai kifejezés, és az egyes ágakban legalább egy-egy utasítás van. A megszokott módon működik.
+</FONT>
+</TD><TD>&nbsp;</TD></TR>
+<TR>
+<TD valign="bottom" align="left"><IMG src="image/corner.gif" width="13" height="13" alt=""></IMG></TD>
+<TD>&nbsp;</TD>
+<TD valign="bottom" align="right"><IMG src="image/corner3.gif" width="13" height="13" alt=""></IMG></TD>
+</TR>
+</TABLE>
+</div>
+</BODY>
+</HTML>
