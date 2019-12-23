@@ -7,7 +7,7 @@
 - [Szintaktikus elemző ~ 2. beadandó](https://github.com/gabboraron/fordprog-egyben#szintaktikus-elemző-2-beadandó)
 - [Szemantikus ellenörző ~ 3. beadandó](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#szemantikus-elemző-3beadandó)
   - [Tutorial](https://github.com/gabboraron/fordprog-egyben#tutorial) 
-- [Kódgenerálás](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#kódgenerálás)
+- [Kódgenerálás ~ 4. beadandó](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#kódgenerálás)
 - [Irodalom, jegyzetek, példák, előadás anyag, könyvek](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#irodalom)
 
 ---
@@ -184,7 +184,7 @@ g++ -ocalculate calculate.cc parse.cc lex.yy.cc
 **Feladat:**
 > A kód szemantikai ellenőrzése
 
-**Fájlok:** [példakód](https://github.com/gabboraron/fordprog-egyben/blob/master/szemantikus-pelda.zip), [régebbi WHILE feldatra adott megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/3-szemantikus), [előző félév anyaga](https://github.com/gabboraron/fordprog-osszefoglalo#3---szemantikus)
+**Fájlok:** [példakód](https://github.com/gabboraron/fordprog-egyben/blob/master/szemantikus-pelda.zip), [régebbi WHILE feldatra adott megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/3-szemantikus), [előző félév anyaga](https://github.com/gabboraron/fordprog-osszefoglalo#3---szemantikus), [mintamegoldás](https://github.com/gabboraron/fordprog-egyben/blob/master/3-szemantikus.zip)
 
 ### Tutorial:
 forrás: [deva.web.elte.hu/szemantikus.hu.html](http://deva.web.elte.hu/szemantikus.hu.html)
