@@ -6,7 +6,8 @@
   - [A lexikális elemző érdekesebb részei](https://github.com/gabboraron/fordprog-egyben#megoldás-érdekes-részei)
 - [Szintaktikus elemző ~ 2. beadandó](https://github.com/gabboraron/fordprog-egyben#szintaktikus-elemző-2-beadandó)
 - [Szemantikus ellenörző ~ 3. beadandó](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#szemantikus-elemző-3beadandó)
-  - [Tutorial](https://github.com/gabboraron/fordprog-egyben#tutorial) 
+  - [Tutorial](https://github.com/gabboraron/fordprog-egyben#tutorial): [1](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#1-lépés), [2](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#2-lépés), [3](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#3-lépés), [4](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#4-lépés), [5](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#5-lépés) 
+  - [Összefoglalás](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#összefoglalás-a-szemantikus-ellenőrzésről)
 - [Kódgenerálás ~ 4. beadandó](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#kódgenerálás)
 - [Irodalom, jegyzetek, példák, előadás anyag, könyvek](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#irodalom)
 
