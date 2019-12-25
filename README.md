@@ -336,7 +336,7 @@ Ezek után a típusok helyességét kell ellenőriznünk, hogy megfelelően van-
 
 ## Kódgenerálás
 
-**Fájlok:**[régebbi WHILE feladatra adott megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/4-kodgen), [előző félév anyaga](https://github.com/gabboraron/fordprog-osszefoglalo#4---kódgenerátor)
+**Fájlok:**[régebbi WHILE feladatra adott megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/4-kodgen), [előző félév anyaga](https://github.com/gabboraron/fordprog-osszefoglalo#4---kódgenerátor), [mintaprogram, amiből érdemes kiindulni](https://github.com/gabboraron/fordprog-egyben/blob/master/kodgen-pelda.zip)
 
 ## Irodalom
 - [Előadás anyaga eredeti](https://deva.web.elte.hu/pubwiki/doku.php?id=fporak)
