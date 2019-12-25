@@ -184,7 +184,7 @@ g++ -ocalculate calculate.cc parse.cc lex.yy.cc
 **Feladat:**
 > A kód szemantikai ellenőrzése
 
-**Fájlok:** [példakód](https://github.com/gabboraron/fordprog-egyben/blob/master/szemantikus-pelda.zip), [régebbi WHILE feldatra adott megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/3-szemantikus), [előző félév anyaga](https://github.com/gabboraron/fordprog-osszefoglalo#3---szemantikus), [mintamegoldás](https://github.com/gabboraron/fordprog-egyben/blob/master/3-szemantikus.zip)
+**Fájlok:** [példakód](https://github.com/gabboraron/fordprog-egyben/blob/master/szemantikus-pelda.zip), [régebbi WHILE feldatra adott megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/3-szemantikus), [előző félév anyaga](https://github.com/gabboraron/fordprog-osszefoglalo#3---szemantikus), [mintamegoldás](https://github.com/gabboraron/fordprog-egyben/blob/master/3-szemantikus.zip), [saját megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/szemantikus-ellenorzo)
 
 ### Tutorial:
 forrás: [deva.web.elte.hu/szemantikus.hu.html](http://deva.web.elte.hu/szemantikus.hu.html)
@@ -315,6 +315,23 @@ if( szimbolumtabla[*$1].var_type != *$3 )
 ```
 - Most már valamennyi szemantikus hibás példára hibát kell jeleznie a programnak.
 - Az `IDENT` és `expr` szimbólumok szemantikus értékeit minden esetben (a lex függvényben és a szabályokhoz csatolt akciókban is) a new kulcsszó segítségével, dinamikus memóriafoglalással hoztuk létre. Azokban az akciókban, ahol ezek a szimbólumok a szabály jobb oldalán állnak, felhasználtuk az értékeket. A program memóriahatékonyságának érdekében azonban a felhasználás után fel kell szabadítani a lefoglalt memóriát, hogy elkerüljük a memóriaszivárgást. Nézd végig az összes szabályt, és ahol a jobb oldalon `IDENT` vagy `expr` áll, ott az akció végére írd be a következő utasítást: `delete $i` (ahol `i` az `IDENT` vagy `expr` sorszáma).
+
+### Összefoglalás a szemantikus ellenőrzésről
+#### I.
+A [lexikális](https://github.com/gabboraron/fordprog-egyben#lexik%C3%A1lis-elemz%C5%91-1-beadand%C3%B3) elemző és [szintaktikus](https://github.com/gabboraron/fordprog-egyben#szintaktikus-elemző-2-beadandó) ellenörző nélkül nem működőképes rendszer, így előbb annak kell működnie.
+#### II.
+- A [`Parser.h`ban egy `map` formájá](https://github.com/gabboraron/fordprog-egyben/blob/7a916e56da6124014c2f22e3b0f83f7f9b5589a8/szemantikus-ellenorzo/Parser.h#L33)ban létrehozzuk a szimbólumtáblát.
+- A `semantics.h`ban [meghatározzuk a használt típusokat egy `enum`ban](https://github.com/gabboraron/fordprog-egyben/blob/7a916e56da6124014c2f22e3b0f83f7f9b5589a8/szemantikus-ellenorzo/semantics.h#L9) ezt követően, meghatározzuk a használt [kifejezésmintákat és azok típusait, meghatározásait `struct`okban](https://github.com/gabboraron/fordprog-egyben/blob/7a916e56da6124014c2f22e3b0f83f7f9b5589a8/szemantikus-ellenorzo/semantics.h#L12).
+  - itt mindig meg kell adni [a sor számát *(`decl_row`)*](https://github.com/gabboraron/fordprog-egyben/blob/7a916e56da6124014c2f22e3b0f83f7f9b5589a8/szemantikus-ellenorzo/semantics.h#L14), ami `int`.
+  - és meg kell adjuk az adott [kifejezés típusát is *(`var_type`)*](https://github.com/gabboraron/fordprog-egyben/blob/7a916e56da6124014c2f22e3b0f83f7f9b5589a8/szemantikus-ellenorzo/semantics.h#L15)
+#### III.
+- Először biztosítanunk kell, hogy lássuk a [yacc fájl](https://github.com/gabboraron/fordprog-egyben/blob/master/szemantikus-ellenorzo/calculate.y)ban ezeket, így [egy `union`ként meghatározzuk az előbb megadott mintákat](https://github.com/gabboraron/fordprog-egyben/blob/7a916e56da6124014c2f22e3b0f83f7f9b5589a8/szemantikus-ellenorzo/calculate.y#L4), majd azokat később [a kifejezésekhez társítjuk, még a program legeljén](https://github.com/gabboraron/fordprog-egyben/blob/7a916e56da6124014c2f22e3b0f83f7f9b5589a8/szemantikus-ellenorzo/calculate.y#L51)
+- fontos, hogy a sorokat olvasó, [Parser.ih-ban](https://github.com/gabboraron/fordprog-egyben/blob/master/szemantikus-ellenorzo/Parser.ih) található [`lex` függvény](https://github.com/gabboraron/fordprog-egyben/blob/7a916e56da6124014c2f22e3b0f83f7f9b5589a8/szemantikus-ellenorzo/Parser.ih#L16)ünk [visszadja nekünk a sorok tartalmát, méghozzá feldarabolva](https://github.com/gabboraron/fordprog-egyben/blob/7a916e56da6124014c2f22e3b0f83f7f9b5589a8/szemantikus-ellenorzo/Parser.ih#L22): `d_val__.szoveg = new std::string(lexer.YYText());`
+- ezután már tudunk a [darabokra egyenként hivatkozni és azokat lekezelhetjük](https://github.com/gabboraron/fordprog-egyben/blob/7a916e56da6124014c2f22e3b0f83f7f9b5589a8/szemantikus-ellenorzo/calculate.y#L217), azaz, ha a kapott forma `A B C D` akkor hivatkoznk rá `$1 $2 $3 $4` formában, illetve mostmár leérhető a `d_loc__.first_line` is, amivel visszadhatjuk a sort amit épp vizsgálunk
+#### IV.
+Mindez mit sem ér ha nem tesszük be az egészet a szimbolóumtáblába, például így: [`szimbolumtabla [*$`*`i`*`] = var_data(d_loc__.first_line, `*`típus`*`)` ](https://github.com/gabboraron/fordprog-egyben/blob/7a916e56da6124014c2f22e3b0f83f7f9b5589a8/szemantikus-ellenorzo/calculate.y#L128)
+#### V.
+Ezek után a típusok helyességét kell ellenőriznünk, hogy megfelelően van-e megadva pl egy matematikai művelet és nem pl egy logikai értékhez szeretnénk hozzáadni valamit. A szabályok baloldalának szemantikai értékét a `$$`al érjük el, a nemterminálist (kifejezés, stb) az `union`on keresztül érjük el, ahogy azt fent megadtuk.
 
 ## Kódgenerálás
 
