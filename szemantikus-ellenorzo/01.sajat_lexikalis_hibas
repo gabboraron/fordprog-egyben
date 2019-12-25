@@ -1,0 +1,7 @@
+PROGRAM masodik
+VALTOZOK:
+	LOGIKAI x
+UTASITASOK:
+	KI: (2 + x) * 5
+	fel:
+PROGRAM_VEGE
