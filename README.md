@@ -344,3 +344,4 @@ Ezek után a típusok helyességét kell ellenőriznünk, hogy megfelelően van-
 - [Fordítóprogramok és formális nyelvek - Király Roland 2007](https://github.com/gabboraron/books/blob/master/Ford%C3%ADt%C3%B3programok.%20%C3%A9s%20form%C3%A1lis%20nyelvek.pdf)
 - [Assembly programozás - Kitlei Róbert 2007](https://github.com/gabboraron/books/blob/master/Kitlei_Robert-Assembly_prgramozas.pdf)
 - [egybefűzve az előadás, a tesztkérdések és gyakorlófeladatok](https://github.com/gabboraron/fordprog-egyben/blob/master/ea/fordprog_egybefuzve.pdf)
+- [feladatmegoldások ~ Nagy Krisztián](https://github.com/gabboraron/fordprog-egyben/blob/master/ea/fordprog_gy_zh1.pdf)
