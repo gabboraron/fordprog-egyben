@@ -141,7 +141,7 @@ PROGRAM_VEGE      std::cout << "kulcsszo: PROGRAM_VEGE" << std::endl;
 VALTOZOK:         std::cout << "kulcsszo: VALTOZOK:"	<< std::endl;
 UTASITASOK:       std::cout << "kulcsszo: UTASITASOK:" 	<< std::endl;
 ````
-> A makrók segítségével könnyen megadhatjuk a komplexebb konstrukciókat, pl: a [karakterek](https://github.com/gabboraron/fordprog-egyben#karakterek) formáit, vagy a whitespacek kezelését, illetve a [megjegyzéseket](https://github.com/gabboraron/fordprog-egyben#megjegyzések)
+> Reguláris kifejezésekkel megadhatjuk a komplexebb konstrukciókat, pl: a [karakterek](https://github.com/gabboraron/fordprog-egyben#karakterek) formáit, vagy a whitespacek kezelését, illetve a [megjegyzéseket](https://github.com/gabboraron/fordprog-egyben#megjegyzések)
 ````
 {DIGIT}+   		std::cout << "karakter(ek): " 		 << YYText()<< std::endl;
 {WS}+    		  std::cout << "ureskarakter(ek): "  << YYText()<< std::endl;
@@ -151,6 +151,46 @@ UTASITASOK:       std::cout << "kulcsszo: UTASITASOK:" 	<< std::endl;
 ```
 ({CHAR}|{UNDERSCORE})+({CHAR}|{DIGIT}|{UNDERSCORE})*			std::cout << "azonosito: " << YYText() << std::endl;
 ```
+> Ezekhez felhasználhatjuk a regexeket.
+>
+> Regexekről bővebben: [részletes regex](https://github.com/gabboraron/fordprog-1-flex#flex-regex)
+
+
+### csttabi féle Youtube tutorial
+#### Fordítóprogramok flex lexikális elemzés 01 - csttabi
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=6xn36w6x0kg
+" target="_blank"><img src="http://img.youtube.com/vi/6xn36w6x0kg/0.jpg" 
+alt="KMP" width="300" height="150" border="10" /></a>
+
+#### Fordítóprogramok flex lexikális elemzés 02 - csttabi
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=xB-Xj520OEs
+" target="_blank"><img src="http://img.youtube.com/vi/xB-Xj520OEs/0.jpg" 
+alt="KMP" width="300" height="150" border="10" /></a>
+
+#### Fordítóprogramok flex lexikális elemzés 03 - csttabi
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=B1I7C8INTCA
+" target="_blank"><img src="http://img.youtube.com/vi/B1I7C8INTCA/0.jpg" 
+alt="KMP" width="300" height="150" border="10" /></a>
+
+#### Fordítóprogramok flex lexikális elemzés 04 - csttabi
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=PuHJY9JQCyk
+" target="_blank"><img src="http://img.youtube.com/vi/PuHJY9JQCyk/0.jpg" 
+alt="KMP" width="300" height="150" border="10" /></a>
+
+#### Fordítóprogramok flex lexikális elemzés 05 - csttabi
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=AVuIyG6peNQ
+" target="_blank"><img src="http://img.youtube.com/vi/AVuIyG6peNQ/0.jpg" 
+alt="KMP" width="300" height="150" border="10" /></a>
+
+#### Fordítóprogramok flex lexikális elemzés 06 - csttabi
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=AVuIyG6peNQf
+" target="_blank"><img src="http://img.youtube.com/vi/AVuIyG6peNQf/0.jpg" 
+alt="KMP" width="300" height="150" border="10" /></a>
+
+#### Fordítóprogramok flex lexikális elemzés 07 - csttabi
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=uhrSQyY2hX8
+" target="_blank"><img src="http://img.youtube.com/vi/uhrSQyY2hX8/0.jpg" 
+alt="KMP" width="300" height="150" border="10" /></a>
 
 ---
 
