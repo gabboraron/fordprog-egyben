@@ -153,10 +153,23 @@ UTASITASOK:       std::cout << "kulcsszo: UTASITASOK:" 	<< std::endl;
 ({CHAR}|{UNDERSCORE})+({CHAR}|{DIGIT}|{UNDERSCORE})*			std::cout << "azonosito: " << YYText() << std::endl;
 ```
 
-> Ezekhez felhasználjuk a **regexeket**.
+### Ezekhez felhasználjuk a regexeket.
 >
 > Regexekről bővebben: [részletes regex](https://github.com/gabboraron/fordprog-1-flex#flex-regex)
 > 
+> _**Fontosabb regexek:**_
+>
+> **`\`   - escape operátor**
+> `.`     - bármi kivéve új sor
+> `[abc]` - bármiylen karakter ezek között, megfelel ennek: `[a-c]`
+> `(r)`   - `r`re illeszkedik a precedencia felülírásával
+> `a?`    - 0 vagy 1 `a`
+> `a+`    - 1 vagy több `a`
+> `a*`    - 0 vagy több `a`
+> `^a`    - `a` karakter a sor **elején**
+> `a$`    - `a` karkater a sor **végén**
+> `a/b`    - `a` de csak ha `b` követi
+
 
 ### csttabi féle Youtube tutorial
 #### Fordítóprogramok flex lexikális elemzés 01 - csttabi
