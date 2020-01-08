@@ -346,9 +346,9 @@ Ezek után a típusok helyességét kell ellenőriznünk, hogy megfelelően van-
 - [egybefűzve az előadás, a tesztkérdések és gyakorlófeladatok](https://github.com/gabboraron/fordprog-egyben/blob/master/ea/fordprog_egybefuzve.pdf)
 - [feladatmegoldások ~ Nagy Krisztián](https://github.com/gabboraron/fordprog-egyben/blob/master/ea/fordprog_gy_zh1.pdf)
 
-### XXI. századi fordító programok
+### XXI. századi fordító programok (YOUTUBE)
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=fbG2P1jCALU
 " target="_blank"><img src="http://img.youtube.com/vi/fbG2P1jCALU/0.jpg" 
-alt="KMP" width="100%" height="100em" border="10" /></a>
+alt="KMP" width="300" height="150" border="10" /></a>
 
 
