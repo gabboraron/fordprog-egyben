@@ -4,6 +4,7 @@
 - [A nyelv definíciója](https://github.com/gabboraron/fordprog-egyben#a-nyelv-definíciója)
 - [Lexikális elemző ~ 1. beadandó](https://github.com/gabboraron/fordprog-egyben#lexikális-elemző-1-beadandó)
   - [A lexikális elemző érdekesebb részei](https://github.com/gabboraron/fordprog-egyben#megoldás-érdekes-részei)
+  - [regex összefoglaló](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#ezekhez-felhasználjuk-a-regexeket)
   - [csttabi féle youtube tutorial](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#csttabi-féle-youtube-tutorial)
 - [Szintaktikus elemző ~ 2. beadandó](https://github.com/gabboraron/fordprog-egyben#szintaktikus-elemző-2-beadandó)
 - [Szemantikus ellenörző ~ 3. beadandó](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#szemantikus-elemző-3beadandó)
@@ -160,14 +161,23 @@ UTASITASOK:       std::cout << "kulcsszo: UTASITASOK:" 	<< std::endl;
 > _**Fontosabb regexek:**_
 >
 > **`\`   - escape operátor**
+>
 > `.`     - bármi kivéve új sor
+>
 > `[abc]` - bármiylen karakter ezek között, megfelel ennek: `[a-c]`
+>
 > `(r)`   - `r`re illeszkedik a precedencia felülírásával
+>
 > `a?`    - 0 vagy 1 `a`
+>
 > `a+`    - 1 vagy több `a`
+>
 > `a*`    - 0 vagy több `a`
+>
 > `^a`    - `a` karakter a sor **elején**
+> 
 > `a$`    - `a` karkater a sor **végén**
+> 
 > `a/b`    - `a` de csak ha `b` követi
 
 
