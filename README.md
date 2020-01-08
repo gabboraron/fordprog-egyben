@@ -4,6 +4,7 @@
 - [A nyelv definíciója](https://github.com/gabboraron/fordprog-egyben#a-nyelv-definíciója)
 - [Lexikális elemző ~ 1. beadandó](https://github.com/gabboraron/fordprog-egyben#lexikális-elemző-1-beadandó)
   - [A lexikális elemző érdekesebb részei](https://github.com/gabboraron/fordprog-egyben#megoldás-érdekes-részei)
+  - [csttabi féle youtube tutorial](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#csttabi-féle-youtube-tutorial)
 - [Szintaktikus elemző ~ 2. beadandó](https://github.com/gabboraron/fordprog-egyben#szintaktikus-elemző-2-beadandó)
 - [Szemantikus ellenörző ~ 3. beadandó](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#szemantikus-elemző-3beadandó)
   - [Tutorial](https://github.com/gabboraron/fordprog-egyben#tutorial): [1](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#1-lépés), [2](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#2-lépés), [3](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#3-lépés), [4](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#4-lépés), [5](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#5-lépés) 
@@ -151,46 +152,47 @@ UTASITASOK:       std::cout << "kulcsszo: UTASITASOK:" 	<< std::endl;
 ```
 ({CHAR}|{UNDERSCORE})+({CHAR}|{DIGIT}|{UNDERSCORE})*			std::cout << "azonosito: " << YYText() << std::endl;
 ```
-> Ezekhez felhasználhatjuk a regexeket.
+
+> Ezekhez felhasználjuk a **regexeket**.
 >
 > Regexekről bővebben: [részletes regex](https://github.com/gabboraron/fordprog-1-flex#flex-regex)
-
+> 
 
 ### csttabi féle Youtube tutorial
 #### Fordítóprogramok flex lexikális elemzés 01 - csttabi
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=6xn36w6x0kg
 " target="_blank"><img src="http://img.youtube.com/vi/6xn36w6x0kg/0.jpg" 
-alt="KMP" width="300" height="150" border="10" /></a>
+alt=" Fordítóprogramok flex lexikális elemzés 01 - csttabi" width="300" height="150" border="10" /></a>
 
 #### Fordítóprogramok flex lexikális elemzés 02 - csttabi
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=xB-Xj520OEs
 " target="_blank"><img src="http://img.youtube.com/vi/xB-Xj520OEs/0.jpg" 
-alt="KMP" width="300" height="150" border="10" /></a>
+alt=" Fordítóprogramok flex lexikális elemzés 02 - csttabi" width="300" height="150" border="10" /></a>
 
 #### Fordítóprogramok flex lexikális elemzés 03 - csttabi
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=B1I7C8INTCA
 " target="_blank"><img src="http://img.youtube.com/vi/B1I7C8INTCA/0.jpg" 
-alt="KMP" width="300" height="150" border="10" /></a>
+alt=" Fordítóprogramok flex lexikális elemzés 03 - csttabi" width="300" height="150" border="10" /></a>
 
 #### Fordítóprogramok flex lexikális elemzés 04 - csttabi
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=PuHJY9JQCyk
 " target="_blank"><img src="http://img.youtube.com/vi/PuHJY9JQCyk/0.jpg" 
-alt="KMP" width="300" height="150" border="10" /></a>
+alt=" Fordítóprogramok flex lexikális elemzés 04 - csttabi" width="300" height="150" border="10" /></a>
 
 #### Fordítóprogramok flex lexikális elemzés 05 - csttabi
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=AVuIyG6peNQ
 " target="_blank"><img src="http://img.youtube.com/vi/AVuIyG6peNQ/0.jpg" 
-alt="KMP" width="300" height="150" border="10" /></a>
+alt=" Fordítóprogramok flex lexikális elemzés 05 - csttabi" width="300" height="150" border="10" /></a>
 
 #### Fordítóprogramok flex lexikális elemzés 06 - csttabi
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=AVuIyG6peNQf
-" target="_blank"><img src="http://img.youtube.com/vi/AVuIyG6peNQf/0.jpg" 
-alt="KMP" width="300" height="150" border="10" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=i5xEkDzoe6g
+" target="_blank"><img src="http://img.youtube.com/vi/i5xEkDzoe6g/0.jpg" 
+alt=" Fordítóprogramok flex lexikális elemzés 06 - csttabi" width="300" height="150" border="10" /></a>
 
 #### Fordítóprogramok flex lexikális elemzés 07 - csttabi
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=uhrSQyY2hX8
 " target="_blank"><img src="http://img.youtube.com/vi/uhrSQyY2hX8/0.jpg" 
-alt="KMP" width="300" height="150" border="10" /></a>
+alt=" Fordítóprogramok flex lexikális elemzés 07 - csttabi" width="300" height="150" border="10" /></a>
 
 ---
 
