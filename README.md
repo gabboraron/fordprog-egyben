@@ -157,11 +157,11 @@ UTASITASOK:       std::cout << "kulcsszo: UTASITASOK:" 	<< std::endl;
 
 ### Ezekhez felhasználjuk a regexeket.
 >
-> Regexekről bővebben: [részletes regex](https://github.com/gabboraron/fordprog-1-flex#flex-regex)
+> Regexekről bővebben: [részletes regex magyarázat](https://github.com/gabboraron/fordprog-1-flex#flex-regex), illetve [aalborgi egyetemi anyag](https://people.cs.aau.dk/~marius/sw/flex/Flex-Regular-Expressions.html)
 > 
 > _**Fontosabb regexek:**_
 >
-> **`\`   - escape operátor**
+> **`\`   - escape operátor, a rákövetkezőt semlegesíti**
 >
 > `.`     - bármi kivéve új sor
 >
