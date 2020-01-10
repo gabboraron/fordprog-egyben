@@ -229,7 +229,7 @@ alt=" Fordítóprogramok flex lexikális elemzés 07 - csttabi" width="300" heig
 > a tesztfájlok közül a `lexikalis_hibas` és `szintaktikus_hibas` kiterjesztésű fájlokra kell hibát jelezni, a többit el kell fogadni.
 
 
-a PLanG nyelv összes szükséges szabályátirata: http://digitus.itk.ppke.hu/~flugi/bevprog_1415/atiras.html
+A PLanG nyelv összes szükséges szabályátirata: http://digitus.itk.ppke.hu/~flugi/bevprog_1415/atiras.html
 
 **Fájlok:** [saját megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/szintaktikus-pelda-ver2), [mintaprogram, amiből érdemes kiindulni](https://github.com/gabboraron/fordprog-egyben/blob/master/szintaktikus-pelda%20(1).zip), [hivatalos tanári megoldás](https://github.com/gabboraron/fordprog-egyben/blob/master/2-szintaktikus.zip), illetve [korábbi félév anyagai](https://github.com/gabboraron/fordprog-2-bisoncpp), [régebbi WHILE feladatra adott megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/2-szintaktikus)
 ### Fordítás és futtatás
@@ -237,10 +237,19 @@ a PLanG nyelv összes szükséges szabályátirata: http://digitus.itk.ppke.hu/~
 ```
 flex calculate.l
 bisonc++ calculate.y
+```
+*ekkkor keletkezik: `Parserbase.h`, `Parser.ih`, `Parser.h`,`parse.cc`*
+
+*a `Parser.ih`, `Parser.h` nem kerül felülírásra legközelbb, így futtatható*
+```
 g++ -ocalculate calculate.cc parse.cc lex.yy.cc
 ```
 **Futtatás:**
 `./calculate example.calculate`
+
+> A folyamat során `C++ scanner`ek generálódnak, erről bővebben itt: [dinosaur.compilertools.net](http://dinosaur.compilertools.net/flex/flex_19.html)
+
+
 
 ### Hibaüzenetek
 [Gyakori hibaüzenetek kifejtése korábbról](https://github.com/gabboraron/fordprog-2-bisoncpp#hibaüzenetek-errorok)
@@ -257,7 +266,7 @@ g++ -ocalculate calculate.cc parse.cc lex.yy.cc
 #### `Reduce/Reduce Conflicts` ~ redukálás-redukálás konfliktus
 > Többféle úton jut el ugyanahhoz a *terminális*hoz, [bővebben kifejtve](https://github.com/gabboraron/fordprog-2-bisoncpp#reducereduce-conflicts)
 
-### `error: ‘d_scanner’ was not declared in this scope return d_scanner.lex();`
+#### `error: ‘d_scanner’ was not declared in this scope return d_scanner.lex();`
 > még nem jöttem rá
 
 
