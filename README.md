@@ -8,12 +8,15 @@
   - [csttabi féle youtube tutorial](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#csttabi-féle-youtube-tutorial)
 - [Szintaktikus elemző ~ 2. beadandó](https://github.com/gabboraron/fordprog-egyben#szintaktikus-elemző-2-beadandó)
   - [gyakori hibaüzenetek](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#hibaüzenetek)
+  - [csttabi féle Youtube tutorial]()
 - [Szemantikus ellenörző ~ 3. beadandó](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#szemantikus-elemző-3beadandó)
   - [Tutorial](https://github.com/gabboraron/fordprog-egyben#tutorial): [1](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#1-lépés), [2](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#2-lépés), [3](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#3-lépés), [4](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#4-lépés), [5](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#5-lépés) 
   - [Összefoglalás](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#összefoglalás-a-szemantikus-ellenőrzésről)
 - [Kódgenerálás ~ 4. beadandó](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#kódgenerálás)
 - [Irodalom, jegyzetek, példák, előadás anyag, könyvek](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#irodalom)
-
+  - [xxi századi fordító programok](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#xxi-századi-fordító-programok-youtube)
+  
+  
 ---
 
 ## Példakód:
@@ -249,8 +252,6 @@ g++ -ocalculate calculate.cc parse.cc lex.yy.cc
 
 > A folyamat során `C++ scanner`ek generálódnak, erről bővebben itt: [dinosaur.compilertools.net](http://dinosaur.compilertools.net/flex/flex_19.html)
 
-
-
 ### Hibaüzenetek
 [Gyakori hibaüzenetek kifejtése korábbról](https://github.com/gabboraron/fordprog-2-bisoncpp#hibaüzenetek-errorok)
 
@@ -271,6 +272,58 @@ g++ -ocalculate calculate.cc parse.cc lex.yy.cc
 
 
 > Továbbá érdemes odafigyelni, hogy a megfelelő [megfelelő header fájlokat használjuk](https://github.com/gabboraron/fordprog-egyben/blob/master/szintaktikus-pelda-ver2/Parser.h).
+
+### csttabi féle Youtube tutorial
+
+#### Fordítóprogramok bisonc++ szintaktikus-hiba 1.
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=NBYM_EhJrZ8
+" target="_blank"><img src="http://img.youtube.com/vi/NBYM_EhJrZ8/0.jpg" 
+alt="Fordítóprogramok bisonc++ szintaktikus-hiba 1." width="300" height="150" border="10" /></a>
+
+#### Fordítóprogramok bisonc++ szintaktikus-hiba 2.
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=kEy9W0Wk1UM
+" target="_blank"><img src="http://img.youtube.com/vi/kEy9W0Wk1UM/0.jpg" 
+alt="Fordítóprogramok bisonc++ szintaktikus-hiba 2." width="300" height="150" border="10" /></a>
+
+#### Fordítóprogramok bisonc++ szintaktikus-hiba 3.
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=LEIV5_Uh3tA
+" target="_blank"><img src="http://img.youtube.com/vi/LEIV5_Uh3tA/0.jpg" 
+alt="Fordítóprogramok bisonc++ szintaktikus-hiba 3." width="300" height="150" border="10" /></a>
+
+#### Fordítóprogramok bisonc++ szintaktikus-hiba 4.
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=CggHKaxOeks
+" target="_blank"><img src="http://img.youtube.com/vi/CggHKaxOeks/0.jpg" 
+alt="Fordítóprogramok bisonc++ szintaktikus-hiba 4." width="300" height="150" border="10" /></a>
+
+#### Fordítóprogramok bisonc++ szintaktikus-hiba 5.
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=BzG2ksM0W1U
+" target="_blank"><img src="http://img.youtube.com/vi/BzG2ksM0W1U/0.jpg" 
+alt="Fordítóprogramok bisonc++ szintaktikus-hiba 5." width="300" height="150" border="10" /></a>
+
+#### Fordítóprogramok bisonc++ szintaktikus-hiba 6.
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=2jc6hIwjaJc
+" target="_blank"><img src="http://img.youtube.com/vi/2jc6hIwjaJc/0.jpg" 
+alt="Fordítóprogramok bisonc++ szintaktikus-hiba 6." width="300" height="150" border="10" /></a>
+
+#### Fordítóprogramok bisonc++ szintaktikus-hiba 7.
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=Epe0o5TJNW8
+" target="_blank"><img src="http://img.youtube.com/vi/Epe0o5TJNW8/0.jpg" 
+alt="Fordítóprogramok bisonc++ szintaktikus-hiba 7." width="300" height="150" border="10" /></a>
+
+#### Fordítóprogramok bisonc++ szintaktikus-hiba 8.
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=kS25UUfZCcI
+" target="_blank"><img src="http://img.youtube.com/vi/kS25UUfZCcI/0.jpg" 
+alt="Fordítóprogramok bisonc++ szintaktikus-hiba 8." width="300" height="150" border="10" /></a>
+
+#### Fordítóprogramok bisonc++ szintaktikus-hiba 9.
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=hXDKcYBM4zM
+" target="_blank"><img src="http://img.youtube.com/vi/hXDKcYBM4zM/0.jpg" 
+alt="Fordítóprogramok bisonc++ szintaktikus-hiba 9." width="300" height="150" border="10" /></a>
+
+#### Fordítóprogramok bisonc++ szintaktikus-hiba 10.
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=GClzg-5BXNc
+" target="_blank"><img src="http://img.youtube.com/vi/GClzg-5BXNc/0.jpg" 
+alt="Fordítóprogramok bisonc++ szintaktikus-hiba 10." width="300" height="150" border="10" /></a>
 
 ---
 
@@ -429,7 +482,7 @@ Ezek után a típusok helyességét kell ellenőriznünk, hogy megfelelően van-
 
 ## Kódgenerálás
 
-**Fájlok:**[régebbi WHILE feladatra adott megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/4-kodgen), [előző félév anyaga](https://github.com/gabboraron/fordprog-osszefoglalo#4---kódgenerátor), [mintaprogram, amiből érdemes kiindulni](https://github.com/gabboraron/fordprog-egyben/blob/master/kodgen-pelda.zip)
+**Fájlok:**[régebbi WHILE feladatra adott megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/4-kodgen), [előző félév anyaga](https://github.com/gabboraron/fordprog-osszefoglalo#4---kódgenerátor), [mintaprogram, amiből érdemes kiindulni](https://github.com/gabboraron/fordprog-egyben/blob/master/kodgen-pelda.zip), [tanári mintamegoldás](https://github.com/gabboraron/fordprog-egyben/blob/master/4-kodgen.zip)
 
 ## Irodalom
 - [Előadás anyaga eredeti](https://deva.web.elte.hu/pubwiki/doku.php?id=fporak)
