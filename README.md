@@ -7,6 +7,7 @@
   - [regex összefoglaló](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#ezekhez-felhasználjuk-a-regexeket)
   - [csttabi féle youtube tutorial](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#csttabi-féle-youtube-tutorial)
 - [Szintaktikus elemző ~ 2. beadandó](https://github.com/gabboraron/fordprog-egyben#szintaktikus-elemző-2-beadandó)
+  - [gyakori hibaüzenetek](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#hibaüzenetek)
 - [Szemantikus ellenörző ~ 3. beadandó](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#szemantikus-elemző-3beadandó)
   - [Tutorial](https://github.com/gabboraron/fordprog-egyben#tutorial): [1](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#1-lépés), [2](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#2-lépés), [3](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#3-lépés), [4](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#4-lépés), [5](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#5-lépés) 
   - [Összefoglalás](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#összefoglalás-a-szemantikus-ellenőrzésről)
@@ -241,8 +242,6 @@ g++ -ocalculate calculate.cc parse.cc lex.yy.cc
 **Futtatás:**
 `./calculate example.calculate`
 
-**[Gyakori hibaüzenetek](https://github.com/gabboraron/fordprog-2-bisoncpp#hibaüzenetek-errorok):** [warning, rule cannot be matched](https://github.com/gabboraron/fordprog-2-bisoncpp#warning-rule-cannot-be-matched), [Shift/Reduce Conflicts](https://github.com/gabboraron/fordprog-2-bisoncpp#shiftreduce-conflicts), [Reduce/Reduce Conflicts](https://github.com/gabboraron/fordprog-2-bisoncpp#reducereduce-conflicts). Továbbá érdemes odafigyelni, hogy a megfelelő [megfelelő header fájlokat használjuk](https://github.com/gabboraron/fordprog-egyben/blob/master/szintaktikus-pelda-ver2/Parser.h).
-
 ### Hibaüzenetek
 [Gyakori hibaüzenetek kifejtése korábbról](https://github.com/gabboraron/fordprog-2-bisoncpp#hibaüzenetek-errorok)
 
@@ -257,6 +256,10 @@ g++ -ocalculate calculate.cc parse.cc lex.yy.cc
 
 #### `Reduce/Reduce Conflicts` ~ redukálás-redukálás konfliktus
 > Többféle úton jut el ugyanahhoz a *terminális*hoz, [bővebben kifejtve](https://github.com/gabboraron/fordprog-2-bisoncpp#reducereduce-conflicts)
+
+### `error: ‘d_scanner’ was not declared in this scope return d_scanner.lex();`
+> még nem jöttem rá
+
 
 > Továbbá érdemes odafigyelni, hogy a megfelelő [megfelelő header fájlokat használjuk](https://github.com/gabboraron/fordprog-egyben/blob/master/szintaktikus-pelda-ver2/Parser.h).
 
