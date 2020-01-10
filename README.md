@@ -8,7 +8,7 @@
   - [csttabi féle youtube tutorial](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#csttabi-féle-youtube-tutorial)
 - [Szintaktikus elemző ~ 2. beadandó](https://github.com/gabboraron/fordprog-egyben#szintaktikus-elemző-2-beadandó)
   - [gyakori hibaüzenetek](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#hibaüzenetek)
-  - [csttabi féle Youtube tutorial]()
+  - [csttabi féle Youtube tutorial](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#csttabi-féle-youtube-tutorial-1)
 - [Szemantikus ellenörző ~ 3. beadandó](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#szemantikus-elemző-3beadandó)
   - [Tutorial](https://github.com/gabboraron/fordprog-egyben#tutorial): [1](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#1-lépés), [2](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#2-lépés), [3](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#3-lépés), [4](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#4-lépés), [5](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#5-lépés) 
   - [Összefoglalás](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#összefoglalás-a-szemantikus-ellenőrzésről)
