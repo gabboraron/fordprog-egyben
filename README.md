@@ -243,6 +243,22 @@ g++ -ocalculate calculate.cc parse.cc lex.yy.cc
 
 **[Gyakori hibaüzenetek](https://github.com/gabboraron/fordprog-2-bisoncpp#hibaüzenetek-errorok):** [warning, rule cannot be matched](https://github.com/gabboraron/fordprog-2-bisoncpp#warning-rule-cannot-be-matched), [Shift/Reduce Conflicts](https://github.com/gabboraron/fordprog-2-bisoncpp#shiftreduce-conflicts), [Reduce/Reduce Conflicts](https://github.com/gabboraron/fordprog-2-bisoncpp#reducereduce-conflicts). Továbbá érdemes odafigyelni, hogy a megfelelő [megfelelő header fájlokat használjuk](https://github.com/gabboraron/fordprog-egyben/blob/master/szintaktikus-pelda-ver2/Parser.h).
 
+### Hibaüzenetek
+[Gyakori hibaüzenetek kifejtése korábbról](https://github.com/gabboraron/fordprog-2-bisoncpp#hibaüzenetek-errorok)
+
+#### `yyparse/yylex/yyerror was not declared in this scope`
+> az `y` fájlban figyeljünk a `%` lezárásokra [stackowerflow](https://stackoverflow.com/questions/38143828/yyparse-yylex-yyerror-was-not-declared-in-this-scope-flex-bison)
+
+#### `warning, rule cannot be matched`
+> van korábban illeszkedő minta a mintánkra az **`l` fájlban** , pl: *kulcsszavak* előtt *változónév*, sorrendmegfordítás megoldja. [Bővebben kifejtve](https://github.com/gabboraron/fordprog-2-bisoncpp#warning-rule-cannot-be-matched)
+
+#### `Shift/Reduce Conflicts` ~ léptetés-redukálás konfliktus
+> korábban illeszkedő minta a szabályok között az **`y` fájlban**. [Bővebben kifejtve](https://github.com/gabboraron/fordprog-2-bisoncpp#shiftreduce-conflicts)
+
+#### `Reduce/Reduce Conflicts` ~ redukálás-redukálás konfliktus
+> Többféle úton jut el ugyanahhoz a *terminális*hoz, [bővebben kifejtve](https://github.com/gabboraron/fordprog-2-bisoncpp#reducereduce-conflicts)
+
+> Továbbá érdemes odafigyelni, hogy a megfelelő [megfelelő header fájlokat használjuk](https://github.com/gabboraron/fordprog-egyben/blob/master/szintaktikus-pelda-ver2/Parser.h).
 
 ---
 
