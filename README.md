@@ -231,7 +231,6 @@ alt=" Fordítóprogramok flex lexikális elemzés 07 - csttabi" width="300" heig
 >
 > a tesztfájlok közül a `lexikalis_hibas` és `szintaktikus_hibas` kiterjesztésű fájlokra kell hibát jelezni, a többit el kell fogadni.
 
-
 A PLanG nyelv összes szükséges szabályátirata: http://digitus.itk.ppke.hu/~flugi/bevprog_1415/atiras.html
 
 **Fájlok:** [saját megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/szintaktikus-pelda-ver2), [mintaprogram, amiből érdemes kiindulni](https://github.com/gabboraron/fordprog-egyben/blob/master/szintaktikus-pelda%20(1).zip), [hivatalos tanári megoldás](https://github.com/gabboraron/fordprog-egyben/blob/master/2-szintaktikus.zip), illetve [korábbi félév anyagai](https://github.com/gabboraron/fordprog-2-bisoncpp), [régebbi WHILE feladatra adott megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/2-szintaktikus)
@@ -267,11 +266,10 @@ g++ -ocalculate calculate.cc parse.cc lex.yy.cc
 #### `Reduce/Reduce Conflicts` ~ redukálás-redukálás konfliktus
 > Többféle úton jut el ugyanahhoz a *terminális*hoz, [bővebben kifejtve](https://github.com/gabboraron/fordprog-2-bisoncpp#reducereduce-conflicts)
 
-#### `error: ‘d_scanner’ was not declared in this scope return d_scanner.lex();`
-> még nem jöttem rá
+> Továbbá érdemes odafigyelni, hogy a [megfelelő header fájlokat használjuk](https://github.com/gabboraron/fordprog-egyben/blob/master/szintaktikus-pelda-ver2/Parser.h).
 
-
-> Továbbá érdemes odafigyelni, hogy a megfelelő [megfelelő header fájlokat használjuk](https://github.com/gabboraron/fordprog-egyben/blob/master/szintaktikus-pelda-ver2/Parser.h).
+**Hasznos linkek:**
+[http://www.jonathanbeard.io/tutorials/FlexBisonC++](http://www.jonathanbeard.io/tutorials/FlexBisonC++)
 
 ### csttabi féle Youtube tutorial
 
@@ -320,7 +318,7 @@ alt="Fordítóprogramok bisonc++ szintaktikus-hiba 8." width="300" height="150" 
 " target="_blank"><img src="http://img.youtube.com/vi/hXDKcYBM4zM/0.jpg" 
 alt="Fordítóprogramok bisonc++ szintaktikus-hiba 9." width="300" height="150" border="10" /></a>
 
-#### Fordítóprogramok bisonc++ szintaktikus-hiba 10.
+#### Fordítóprogramok bisonc++ szintaktikus-hiba 10. (nyelv kiegészítése egyéb pár szabályal, típussal, stb)
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=GClzg-5BXNc
 " target="_blank"><img src="http://img.youtube.com/vi/GClzg-5BXNc/0.jpg" 
 alt="Fordítóprogramok bisonc++ szintaktikus-hiba 10." width="300" height="150" border="10" /></a>
@@ -483,6 +481,23 @@ Ezek után a típusok helyességét kell ellenőriznünk, hogy megfelelően van-
 ## Kódgenerálás
 
 **Fájlok:**[régebbi WHILE feladatra adott megoldás](https://github.com/gabboraron/fordprog-egyben/tree/master/4-kodgen), [előző félév anyaga](https://github.com/gabboraron/fordprog-osszefoglalo#4---kódgenerátor), [mintaprogram, amiből érdemes kiindulni](https://github.com/gabboraron/fordprog-egyben/blob/master/kodgen-pelda.zip), [tanári mintamegoldás](https://github.com/gabboraron/fordprog-egyben/blob/master/4-kodgen.zip)
+
+## Nyelv kiegészítése (vizsgafeladatok)
+### `String`
+> Egészítsük ki `String` típussal és hozzá egy `++` (konkatenáció) művelettel és egy hosszúság lekérdezéssel, `hossz`.  
+>
+> Mintakód:
+> ```
+> PROGRAM pelda
+> VALTOZOK:
+>  STRING s
+> UTASITASOK:
+>  s := "com"
+>  KI: hossz(s ++ "piler")
+> PROGRAM_VEGE
+> ```
+>
+
 
 ## Irodalom
 - [Előadás anyaga eredeti](https://deva.web.elte.hu/pubwiki/doku.php?id=fporak)
