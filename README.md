@@ -13,6 +13,8 @@
   - [Tutorial](https://github.com/gabboraron/fordprog-egyben#tutorial): [1](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#1-lépés), [2](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#2-lépés), [3](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#3-lépés), [4](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#4-lépés), [5](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#5-lépés) 
   - [Összefoglalás](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#összefoglalás-a-szemantikus-ellenőrzésről)
 - [Kódgenerálás ~ 4. beadandó](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#kódgenerálás)
+- [Nyelv kiegészítése (vizsgafeladatok)](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#nyelv-kiegészítése-vizsgafeladatok)
+  - [`String`](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#string)
 - [Irodalom, jegyzetek, példák, előadás anyag, könyvek](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#irodalom)
   - [xxi századi fordító programok](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#xxi-századi-fordító-programok-youtube)
   
@@ -184,6 +186,9 @@ UTASITASOK:       std::cout << "kulcsszo: UTASITASOK:" 	<< std::endl;
 > 
 > `a/b`    - `a` de csak ha `b` követi
 
+### gyakori hibaüzenetek
+#### nem illeszkedő minta
+> a sorrendben a legelső illeszkedő mintát fogja figyelembe venni. [hasonló Stackowerflow kérdés](https://stackoverflow.com/questions/58780981/why-the-last-rule-matching-in-my-lex-file-when-i-have-better-rules)
 
 ### csttabi féle Youtube tutorial
 #### Fordítóprogramok flex lexikális elemzés 01 - csttabi
@@ -256,6 +261,9 @@ g++ -ocalculate calculate.cc parse.cc lex.yy.cc
 
 #### `yyparse/yylex/yyerror was not declared in this scope`
 > az `y` fájlban figyeljünk a `%` lezárásokra [stackowerflow](https://stackoverflow.com/questions/38143828/yyparse-yylex-yyerror-was-not-declared-in-this-scope-flex-bison)
+
+### `multiple definition of 'yylineno'`
+> ha több parserünk van akkor külön kell őket elneveznünk. [Stackowerflow válasz](https://stackoverflow.com/a/53448329/6274697)
 
 #### `warning, rule cannot be matched`
 > van korábban illeszkedő minta a mintánkra az **`l` fájlban** , pl: *kulcsszavak* előtt *változónév*, sorrendmegfordítás megoldja. [Bővebben kifejtve](https://github.com/gabboraron/fordprog-2-bisoncpp#warning-rule-cannot-be-matched)
