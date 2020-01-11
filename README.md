@@ -5,6 +5,7 @@
 - [Lexikális elemző ~ 1. beadandó](https://github.com/gabboraron/fordprog-egyben#lexikális-elemző-1-beadandó)
   - [A lexikális elemző érdekesebb részei](https://github.com/gabboraron/fordprog-egyben#megoldás-érdekes-részei)
   - [regex összefoglaló](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#ezekhez-felhasználjuk-a-regexeket)
+  - [gyakori hibaüzentek](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#gyakori-hibaüzenetek)
   - [csttabi féle youtube tutorial](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#csttabi-féle-youtube-tutorial)
 - [Szintaktikus elemző ~ 2. beadandó](https://github.com/gabboraron/fordprog-egyben#szintaktikus-elemző-2-beadandó)
   - [gyakori hibaüzenetek](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#hibaüzenetek)
@@ -262,7 +263,7 @@ g++ -ocalculate calculate.cc parse.cc lex.yy.cc
 #### `yyparse/yylex/yyerror was not declared in this scope`
 > az `y` fájlban figyeljünk a `%` lezárásokra [stackowerflow](https://stackoverflow.com/questions/38143828/yyparse-yylex-yyerror-was-not-declared-in-this-scope-flex-bison)
 
-### `multiple definition of 'yylineno'`
+#### `multiple definition of 'yylineno'`
 > ha több parserünk van akkor külön kell őket elneveznünk. [Stackowerflow válasz](https://stackoverflow.com/a/53448329/6274697)
 
 #### `warning, rule cannot be matched`
@@ -504,16 +505,87 @@ Ezek után a típusok helyességét kell ellenőriznünk, hogy megfelelően van-
 >  KI: hossz(s ++ "piler")
 > PROGRAM_VEGE
 > ```
->
 
+fájlok: [calculate.l](), [calculate.y]()
+
+> **Lexikális kiegészítés**
+>
+> ```
+> "++"			  return Parser::CONCAT;
+> ```
+> 
+> ```
+> "hossz"			return Parser::HOSSZ;
+> ```
+>  
+> ```
+> STRING      return Parser::STRING;
+> ```
+> 
+> ```
+> \"([^\n"])*\"		  
+> {
+>   return Parser::STRINGCONST;
+> }
+> ```
+
+
+> **szintaktikai kiegészítés**
+>
+> ```
+> %token STRING
+> %token STRINGCONST
+> %token HOSSZ
+> ```
+> 
+> ```
+> %left CONCAT
+> ```
+>
+> *Típusokhoz* (`type`)
+> ```
+> STRING
+>    {
+>        std::cout << "type -> STRING" << std::endl;
+>    }
+> ```
+> 
+> ```
+> fuggveny:
+>    HOSSZ OPEN kifejezes CLOSE
+>    {
+>         std::cout << "fuggveny -> HOSSZ OPEN kifejezes CLOSE" << std::endl;
+>    }
+> ;    
+> ```
+>
+> *Kifejezésekhez* (`kifejezes`)
+> ```
+>    fuggveny
+>    {
+>         std::cout << "kifejezes -> fuggveny" << std::endl;
+>    }
+> |
+>    kifejezes CONCAT kifejezes
+>    {
+>         std::cout << "kifejezes -> kifejezes CONCAT kifejezes" << std::endl;
+>    }
+> |    
+>    STRINGCONST
+>    {
+>        std::cout << "kifejezes -> STRINGCONST" << std::endl;
+>    }
+> ```
 
 ## Irodalom
+- [Lex, Yacc, Flex, Bison manual](http://dinosaur.compilertools.net/)
 - [Előadás anyaga eredeti](https://deva.web.elte.hu/pubwiki/doku.php?id=fporak)
 - [Előadás anyag itt](https://github.com/gabboraron/fordprog-egyben/tree/master/ea)
 - [Fordítóprogramok és formális nyelvek - Király Roland 2007](https://github.com/gabboraron/books/blob/master/Ford%C3%ADt%C3%B3programok.%20%C3%A9s%20form%C3%A1lis%20nyelvek.pdf)
 - [Assembly programozás - Kitlei Róbert 2007](https://github.com/gabboraron/books/blob/master/Kitlei_Robert-Assembly_prgramozas.pdf)
 - [egybefűzve az előadás, a tesztkérdések és gyakorlófeladatok](https://github.com/gabboraron/fordprog-egyben/blob/master/ea/fordprog_egybefuzve.pdf)
 - [feladatmegoldások ~ Nagy Krisztián](https://github.com/gabboraron/fordprog-egyben/blob/master/ea/fordprog_gy_zh1.pdf)
+- [Language-Parametric Methods for Developing Interactive Programming Systems](https://github.com/gabboraron/books/blob/master/a8e4303f3f89d660d24eae1086f7b448c25d.pdf)
 
 ### XXI. századi fordító programok (YOUTUBE)
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=fbG2P1jCALU
