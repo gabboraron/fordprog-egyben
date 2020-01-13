@@ -18,6 +18,7 @@
   - [`String`](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#string)
 - [Irodalom, jegyzetek, példák, előadás anyag, könyvek](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#irodalom)
   - [xxi századi fordító programok](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#xxi-századi-fordító-programok-youtube)
+- [Szoftverkörnyezet](https://github.com/gabboraron/fordprog-egyben/blob/master/README.md#szoftverkörnyezet)  
   
   
 ---
@@ -595,26 +596,26 @@ alt="KMP" width="300" height="150" border="10" /></a>
 ## Szoftverkörnyezet
 ### Lexikális elemző generátor: flex
 
-    [letöltés](https://github.com/westes/flex/releases)
-    [dokumentáció](http://dinosaur.compilertools.net/flex/index.html)
-    [példaprogram](http://deva.web.elte.hu/fordprog/lexikalis-pelda.zip)
-    [tutorial](http://deva.web.elte.hu/fordprog/flex-tutorial.pdf)
+- [letöltés](https://github.com/westes/flex/releases)
+- [dokumentáció](http://dinosaur.compilertools.net/flex/index.html)
+- [példaprogram](http://deva.web.elte.hu/fordprog/lexikalis-pelda.zip)
+- [tutorial](http://deva.web.elte.hu/fordprog/flex-tutorial.pdf)
     
 ###  Szintaktikus elemző generátor: bisonc++
 
-    [letöltés](http://sourceforge.net/project/showfiles.php?group_id=129936)
-    [dokumentáció](http://bisoncpp.sourceforge.net/bisonc++.html)
-    [példaprogram](http://deva.web.elte.hu/fordprog/szintaktikus-pelda.zip)
-    [tutorial](http://deva.web.elte.hu/fordprog/bisoncpp-tutorial.pdf)
+- [letöltés](http://sourceforge.net/project/showfiles.php?group_id=129936)
+- [dokumentáció](http://bisoncpp.sourceforge.net/bisonc++.html)
+- [példaprogram](http://deva.web.elte.hu/fordprog/szintaktikus-pelda.zip)
+- [tutorial](http://deva.web.elte.hu/fordprog/bisoncpp-tutorial.pdf)
 
 ### Szemantikus elemzés:
 
-    [segédanyag](http://deva.web.elte.hu/szemantikus.hu.html)
-    [példaprogram](http://deva.web.elte.hu/fordprog/szemantikus-pelda.zip)
+- [segédanyag](http://deva.web.elte.hu/szemantikus.hu.html)
+- [példaprogram](http://deva.web.elte.hu/fordprog/szemantikus-pelda.zip)
 
 ### Kódgenerálás:
 
-    [segédanyag](http://deva.web.elte.hu/fordprog/14-kodgen-handout.pdf)
-    [példaprogram](http://deva.web.elte.hu/fordprog/kodgen-pelda.zip)
-    [NASM dokumentáció](http://www.nasm.us/xdoc/2.09.10/html/nasmdoc0.html)
-    [Assembly kódtáblázat](http://www.jegerlehner.ch/intel/IntelCodeTable.pdf)
+- [segédanyag](http://deva.web.elte.hu/fordprog/14-kodgen-handout.pdf)
+- [példaprogram](http://deva.web.elte.hu/fordprog/kodgen-pelda.zip)
+- [NASM dokumentáció](http://www.nasm.us/xdoc/2.09.10/html/nasmdoc0.html)
+- [Assembly kódtáblázat](http://www.jegerlehner.ch/intel/IntelCodeTable.pdf)
